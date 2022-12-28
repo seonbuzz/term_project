@@ -3,9 +3,15 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
+<<<<<<< HEAD
     "scrollTop": -419.1666500104806,
     "scrollLeft": -440.833315816191,
     "zoomLevel": 0.6,
+=======
+    "scrollTop": -685.8333060807668,
+    "scrollLeft": -477.4999810258543,
+    "zoomLevel": 0.3,
+>>>>>>> 5b1d4a4bef64f779c98721f9cf03b16cc774cd31
     "show": {
       "tableComment": true,
       "columnComment": true,
@@ -41,6 +47,7 @@
     "pluginSerializationMap": {}
   },
   "table": {
+<<<<<<< HEAD
     "tables": [
       {
         "name": "ANSWERS",
@@ -468,143 +475,15 @@
         "id": "9b8b69d1-9bd7-4327-a8da-074c50668d16"
       }
     ],
+=======
+    "tables": [],
+>>>>>>> 5b1d4a4bef64f779c98721f9cf03b16cc774cd31
     "indexes": []
   },
   "memo": {
     "memos": []
   },
   "relationship": {
-    "relationships": [
-      {
-        "identification": false,
-        "relationshipType": "ZeroN",
-        "startRelationshipType": "Dash",
-        "start": {
-          "tableId": "c257ad4e-49f0-4a88-8500-a7ca440be31d",
-          "columnIds": [
-            "bd1ff28f-9fcf-4494-b20f-2cc020892802"
-          ],
-          "x": 606.541,
-          "y": 374.6251,
-          "direction": "left"
-        },
-        "end": {
-          "tableId": "0eed3d5b-2f18-4148-9ae3-c64697732622",
-          "columnIds": [
-            "06e2a692-80fe-4c8f-8910-442de1474aa1"
-          ],
-          "x": 497.993740625,
-          "y": 226.2502,
-          "direction": "right"
-        },
-        "constraintName": "",
-        "visible": true,
-        "id": "ae442824-af73-48a1-8318-297545a14bd5"
-      },
-      {
-        "identification": false,
-        "relationshipType": "ZeroN",
-        "startRelationshipType": "Dash",
-        "start": {
-          "tableId": "97808901-acf8-49c2-96f2-8ec15061e7b7",
-          "columnIds": [
-            "c58982f6-a1ce-4474-b1e6-60f5e7a5a6a4"
-          ],
-          "x": 599.2086,
-          "y": 65.25,
-          "direction": "left"
-        },
-        "end": {
-          "tableId": "0eed3d5b-2f18-4148-9ae3-c64697732622",
-          "columnIds": [
-            "8c1653af-b9c3-4cce-a1d9-748b447bba98"
-          ],
-          "x": 497.993740625,
-          "y": 171.2502,
-          "direction": "right"
-        },
-        "constraintName": "",
-        "visible": true,
-        "id": "a8205a64-574e-4ade-806d-53436aea903a"
-      },
-      {
-        "identification": false,
-        "relationshipType": "ZeroN",
-        "startRelationshipType": "Dash",
-        "start": {
-          "tableId": "c257ad4e-49f0-4a88-8500-a7ca440be31d",
-          "columnIds": [
-            "bd1ff28f-9fcf-4494-b20f-2cc020892802"
-          ],
-          "x": 1047.2851406250002,
-          "y": 374.6251,
-          "direction": "right"
-        },
-        "end": {
-          "tableId": "5a74fa58-65f9-4cbd-9409-efc113475742",
-          "columnIds": [
-            "dce5ad8d-6c7b-43d0-8107-79e97b57cda9"
-          ],
-          "x": 1176.0428,
-          "y": 457.8334,
-          "direction": "left"
-        },
-        "constraintName": "",
-        "visible": true,
-        "id": "1277f783-3968-4bc0-a3d0-8b6dff9471e0"
-      },
-      {
-        "identification": false,
-        "relationshipType": "ZeroN",
-        "startRelationshipType": "Dash",
-        "start": {
-          "tableId": "9b8b69d1-9bd7-4327-a8da-074c50668d16",
-          "columnIds": [
-            "d2366eb9-6061-4ee2-af55-4470f933e014"
-          ],
-          "x": 449.3013734375,
-          "y": 524.0831000000001,
-          "direction": "right"
-        },
-        "end": {
-          "tableId": "5a74fa58-65f9-4cbd-9409-efc113475742",
-          "columnIds": [
-            "1306b0e3-e7f8-46d6-8716-730e33fb8a85"
-          ],
-          "x": 1176.0428,
-          "y": 544.8334,
-          "direction": "left"
-        },
-        "constraintName": "",
-        "visible": true,
-        "id": "83e7747e-72ba-494e-ae1f-691738a50193"
-      },
-      {
-        "identification": false,
-        "relationshipType": "ZeroN",
-        "startRelationshipType": "Dash",
-        "start": {
-          "tableId": "97808901-acf8-49c2-96f2-8ec15061e7b7",
-          "columnIds": [
-            "c58982f6-a1ce-4474-b1e6-60f5e7a5a6a4"
-          ],
-          "x": 1050.80088515625,
-          "y": 65.25,
-          "direction": "right"
-        },
-        "end": {
-          "tableId": "5a74fa58-65f9-4cbd-9409-efc113475742",
-          "columnIds": [
-            "9101e6cc-ef91-44c9-86af-21d3022bda1b"
-          ],
-          "x": 1176.0428,
-          "y": 501.3334,
-          "direction": "left"
-        },
-        "constraintName": "",
-        "visible": true,
-        "id": "7a9173ea-0f59-46ce-beec-547c99565b0d"
-      }
-    ]
+    "relationships": []
   }
 }

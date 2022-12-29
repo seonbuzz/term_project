@@ -20,6 +20,7 @@ public class LoginController extends HttpServlet {
         String userPwd = request.getParameter("userPwd");
         
         // new MemberBean().loginMember(userId, userPwd);
+        // System.out.println();
     }
     
     @Override

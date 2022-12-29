@@ -5,35 +5,40 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.HashMap;
 
 import com.retoree.term_project.member.controller.LoginController;
 
 public class LoginWithDB {
-    
 
-    public void loginMember(Connection connection, String userId, String userPwd) throws SQLException {
+    public HashMap<String, Object> loginMember(String id, String pwd)
+            throws SQLException {
 
-        Commons commons = new Commons(); 
-        PreparedStatement pstmt = null; //sql문에 '?'가 있을땐 preparedstatement
-        // Statement statement = commons.getStatement(); //쿼리문을 넣으려면 statement
+        Commons commons = new Commons();
+        Connection connection = commons.connection();
+        PreparedStatement pstmt = null;
         ResultSet resultSet = null;
-        
-        LoginController loginCtr = null;
 
-    
-            
-        
+        // LoginController loginCtr = null;
+
         String query = "SELECT USERS_UID, PHONE, NAME, EMAIL, ID, PWD " +
-                        "FROM users_list " +
-                        "WHERE ID = ? " +
-                        "AND pwd = ? ";
+                "FROM users_list " +
+                "WHERE ID = ? " +
+                "AND PWD = ? ";
 
-     pstmt = connection.prepareStatement(query);
-     pstmt.setString(1, userId);
-     pstmt.setString(2, userPwd);
+        pstmt = connection.prepareStatement(query);
+        pstmt.setString(1, id);
+        pstmt.setString(2, pwd);
 
-     resultSet = pstmt.executeQuery();
-   
+        resultSet = pstmt.executeQuery(); // 조회 결과가 있다면 1 row 출력 or not = nothing
+
+        HashMap<String, Object> result = null;
+        while (resultSet.next()) {
+            result = new HashMap<>();
+            result.put("ID", resultSet.getString("ID"));
+            result.put("PWD", resultSet.getString("PWD"));
+
+        }
+        return result;
     }
-
 }

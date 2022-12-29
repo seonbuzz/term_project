@@ -21,12 +21,13 @@
 <%
 ArrayList survey_answer = (ArrayList)request.getAttribute("survey_answer");
 ArrayList questions = (ArrayList)request.getAttribute("questions");
+String userName = (String)request.getAttribute("userName");
 %> 
     <%@ include file="header.jsp" %>
 
     <div class="container border border-dark rounded text-center w-100 mt-4">
       <main class="p-5">
-        <div class="text-center pb-5">회원님의 설문조사 결과입니다.</div>
+        <div class="text-center pb-5"><%= userName%>님의 설문조사 결과입니다.</div>
         <%--  --%>
         <table
           class="table table-primary table-bordered border-dark text-center"
@@ -95,7 +96,7 @@ ArrayList questions = (ArrayList)request.getAttribute("questions");
         <br /><br /><br />
         
         <table>
-          <a class="btn btn-lg btn-warning border-dark" href="./index.html"
+          <a class="btn btn-lg btn-warning border-dark" href="/index"
             >메인</a
           >
         </table>

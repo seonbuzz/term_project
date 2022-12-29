@@ -16,8 +16,7 @@ public class StatisticsWithDB {
         users_Uid = this.users_Uid;
     }
     // 1. 회원 설문/답문 조회
-    // users_list.USERS_UID 조회 -> survey.EXAMPLE_UID 출력
-    // 
+
     public ArrayList getUserServey(){
         Commons commons = new Commons();
         Statement statement = commons.getStatement();
@@ -34,6 +33,22 @@ public class StatisticsWithDB {
         }
         return survey_answer;
     } 
+    public String getUserName(){
+        Commons commons = new Commons();
+        Statement statement = commons.getStatement();
+        users_Uid = "U1"; //테스트용 값
+        String query = "select * from users_list where USERS_UID ='"+users_Uid+"';";
+        String userName ="";
+        try {
+            ResultSet resultSet = statement.executeQuery(query);
+            while (resultSet.next()){
+                userName=resultSet.getString("NAME");
+            }
+        } catch (SQLException e) {
+            e.getStackTrace();
+        }
+        return userName;
+    }
     
     public ArrayList getQuestion(){
         Commons commons = new Commons();

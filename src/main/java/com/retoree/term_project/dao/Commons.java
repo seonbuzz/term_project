@@ -9,9 +9,10 @@ import java.util.Date;
 
 public class Commons {
     public Statement getStatement(){
-        String url = "jdbc:mysql://localhost:3306/`retoree_termproject`";
+        String url = "jdbc:mysql://localhost:3306/retoree_termproject";
         String user = "root";
         String password = "*khacademy!";
+        // String password = "root";
 
         Statement statement = null;
         try {

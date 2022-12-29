@@ -5,6 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class StatisticsWithDB {
     String users_Uid; //세션에서 받아오기
@@ -33,7 +34,29 @@ public class StatisticsWithDB {
         }
         return survey_answer;
     } 
+    
+    public ArrayList getQuestion(){
+        Commons commons = new Commons();
+        Statement statement = commons.getStatement();
 
+        String query = "SELECT * FROM questions_list;";
+        ArrayList questions = new ArrayList<>();
+        
+
+        try {
+            ResultSet resultSet = statement.executeQuery(query);
+            while (resultSet.next()){
+                HashMap question = new HashMap<>();
+                question.put("QUESTIONS", resultSet.getString("QUESTIONS"));
+                question.put("ORDERS", Integer.parseInt(resultSet.getString("ORDERS")));
+                questions.add(question);
+            }
+        } catch (SQLException e) {
+            e.getStackTrace();
+        }
+
+        return questions;        
+    }
     // 2. 설문자별 통계
 
     // 3. 질문별 총 답변 수

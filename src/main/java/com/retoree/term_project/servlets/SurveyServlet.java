@@ -3,7 +3,7 @@ package com.retoree.term_project.servlets;
 import java.io.IOException;
 import java.util.HashMap;
 
-import com.retoree.term_project.dao.PollWithDB;
+import com.retoree.term_project.dao.SurveyWithDB;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -13,16 +13,16 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet(urlPatterns = "") //아직 작성x
-public class PollDetailServlets extends HttpServlet{
+public class SurveyServlet extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
        // input type
        String questions_Uid = request.getParameter("QUESTIONS_UID");
 
-       PollWithDB pollWithDB = new PollWithDB();
+       SurveyWithDB surveyWithDB = new SurveyWithDB();
        HashMap<String, Object> quetion = null;
        try {
-        quetion = pollWithDB.getQuestion(questions_Uid);
+        quetion = SurveyWithDB.getQuestion(questions_Uid);
         
        } catch (Exception e) {
        

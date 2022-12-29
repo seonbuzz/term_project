@@ -4,40 +4,47 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.HashMap;
 
-import com.retoree.term_project.member.controller.LoginController;
+import com.retoree.term_project.Bean.Member;
 
 public class LoginWithDB {
 
-    public HashMap<String, Object> loginMember(String id, String pwd)
+    public Member loginMember(String id, String pwd)
             throws SQLException {
 
+        Member m = null;
         Commons commons = new Commons();
         Connection connection = commons.connection();
         PreparedStatement pstmt = null;
         ResultSet resultSet = null;
 
-        // LoginController loginCtr = null;
-
         String query = "SELECT USERS_UID, PHONE, NAME, EMAIL, ID, PWD " +
                 "FROM users_list " +
-                "WHERE ID = ? " +
-                "AND PWD = ? ";
+                "WHERE ID = ? AND PWD = ? ";
 
-        pstmt = connection.prepareStatement(query);
-        pstmt.setString(1, id);
-        pstmt.setString(2, pwd);
+        try {
 
-        resultSet = pstmt.executeQuery(); // 조회 결과가 있다면 1 row 출력 or not = nothing
+            pstmt = connection.prepareStatement(query); // 미완성된 sql문
+            pstmt.setString(1, id);
+            pstmt.setString(2, pwd);
 
-        HashMap<String, Object> result = null;
-        while (resultSet.next()) {
-            result = new HashMap<>();
-            result.put("ID", resultSet.getString("ID"));
-            result.put("PWD", resultSet.getString("PWD"));
+            resultSet = pstmt.executeQuery(); // 조회 결과가 있다면 1 row 출력 or not = nothing
 
+            if (resultSet.next()) {
+                m = new Member(resultSet.getInt("users_uid"),
+                        resultSet.getString("phone"),
+                        resultSet.getString("name"),
+                        resultSet.getString("email"),
+                        resultSet.getString("id"),
+                        resultSet.getString("pwd"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-        return result;
+        // resultSet.close();
+        // pstmt.close();
+        // connection.close();
+
+        return m;
     }
 }

@@ -29,7 +29,6 @@ public class StatisticsPrintUserServeyServlet extends HttpServlet{
         request.setAttribute("survey_answer", survey_answer);
         request.setAttribute("questions", questions);
         request.setAttribute("userName", userName);
-        System.out.println(userName);
         requestDispatcher.forward(request, response);
     }
     

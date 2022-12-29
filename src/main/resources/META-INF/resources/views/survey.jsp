@@ -2,15 +2,406 @@
 <%@ page import="java.util.HashMap, java.util.ArrayList" %>
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/all.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <title>SUN - 설문</title>
+  </head>
+  <body>
+    <header
+      style="
+        background-color: RGB(222, 220, 238);
+        color: RGB(106, 96, 169);
+        font-weight: 800;
+      "
+    >
+      <nav class="navbar">
+        <div class="container-fluid my-2 mx-5 align-items-start">
+          <a href="./index.html" class="nav-link fs-5" style="width: 25%"
+            >이어폰 만족도 조사</a
+          >
+          <a href="./index.html" class="nav-link fs-5" style="width: 15%"
+            >HOME</a
+          >
+          <a href="./survey.html" class="nav-link fs-5" style="width: 15%"
+            >설문</a
+          >
+          <div style="width: 15%">
+            <a
+              href="#collapseId"
+              class="navbar-toggler border-0 text-decoration-none fs-5 btn"
+              data-bs-toggle="collapse"
+              style="color: RGB(106, 96, 169); font-weight: 800"
+              >통계</a
+            >
+            <div class="collapse navbar-collapse" id="collapseId">
+              <div class="navbar-nav">
+                <a
+                  href="./result1.html"
+                  class="nav-link"
+                  style="color: RGB(106, 96, 169)"
+                  >회원 설문/답문 조회</a
+                >
+                <a
+                  href="./result2.html"
+                  class="nav-link"
+                  style="color: RGB(106, 96, 169)"
+                  >설문자별 통계</a
+                >
+                <a
+                  href="./result3.html"
+                  class="nav-link"
+                  style="color: RGB(106, 96, 169)"
+                  >질문별 총 답변 수</a
+                >
+              </div>
+            </div>
+          </div>
+          <a href="./login.html" class="nav-link fs-5" style="width: 15%"
+            >로그인</a
+          >
+        </div>
+      </nav>
+    </header>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+    <div
+      class="container border d-flex justify-content-center border-dark rounded form-signin mt-4 p-5"
+    >
+      <main>
+        <form action="./survey_submit.html" method="get">
+          <table class="table table-borderless">
+            <tr>
+              <td>
+                <div>
+                  1. 현재 사용중인 제품을 선택해주세요. (답은 한가지만 선택
+                  가능)
+                </div>
+                <div class="form-check">
+                  <input
+                    type="radio"
+                    class="form-check-input"
+                    name="flex"
+                    id="default-radio"
+                    required
+                  />
+                  <label for="default-radio" class="form-check-label"
+                    >(1)무선 이어폰</label
+                  >
+                </div>
+                <div class="form-check">
+                  <input
+                    type="radio"
+                    class="form-check-input"
+                    name="flex"
+                    id="checked-radio"
+                    required
+                  />
+                  <label for="checked-radio" class="form-check-label"
+                    >(2)헤드셋</label
+                  >
+                </div>
+                <div class="form-check">
+                  <input
+                    type="radio"
+                    class="form-check-input"
+                    name="flex"
+                    id="checked-radio3"
+                    required
+                  />
+                  <label for="checked-radio3" class="form-check-label"
+                    >(3)유선 이어폰</label
+                  >
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div>
+                  2. 현재 사용중인 제품의 가격이 적당하다고 생각하십니까? (답은
+                  한가지만 선택 가능)
+                </div>
+                <div class="form-check form-check-inline">
+                  <input
+                    type="radio"
+                    class="form-check-input"
+                    name="flex2"
+                    id="checked2_1"
+                    required
+                    required
+                  />
+                  <label for="checked2_1" class="form-check-label"
+                    >(1) 전혀 아니다.</label
+                  >
+                </div>
 
-</body>
+                <input
+                  type="radio"
+                  class="form-check-input"
+                  name="flex2"
+                  id="checked2_2"
+                  required
+                  required
+                />
+                <label for="checked2_2" class="form-check-label"
+                  >(2)아니다.</label
+                >
 
+                <input
+                  type="radio"
+                  class="form-check-input"
+                  name="flex2"
+                  id="checked2_3"
+                  required
+                  required
+                />
+                <label for="checked2_3" class="form-check-label"
+                  >(3)보통이다.</label
+                >
+                <input
+                  type="radio"
+                  class="form-check-input"
+                  name="flex2"
+                  id="checked2_4"
+                  required
+                  required
+                />
+                <label for="checked2_4" class="form-check-label"
+                  >(4)그렇다.</label
+                >
+                <input
+                  type="radio"
+                  class="form-check-input"
+                  name="flex2"
+                  id="checked2_5"
+                  required
+                  required
+                />
+                <label for="checked2_5" class="form-check-label"
+                  >(5)매우 그렇다.</label
+                >
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div>
+                  3. 사용중인 제품의 음향은 만족스러우신가요? (답은 한가지만
+                  선택 가능)
+                </div>
+                <div class="form-check form-check-inline">
+                  <input
+                    type="radio"
+                    class="form-check-input"
+                    name="flex3"
+                    id="checked3_1"
+                    required
+                  />
+                  <label for="checked3_1" class="form-check-label"
+                    >(1) 전혀 아니다.</label
+                  >
+                </div>
+
+                <input
+                  type="radio"
+                  class="form-check-input"
+                  name="flex3"
+                  id="checked3_2"
+                  required
+                />
+                <label for="checked3_2" class="form-check-label"
+                  >(2)아니다.</label
+                >
+
+                <input
+                  type="radio"
+                  class="form-check-input"
+                  name="flex3"
+                  id="checked3_3"
+                  required
+                />
+                <label for="checked3_3" class="form-check-label"
+                  >(3)보통이다.</label
+                >
+                <input
+                  type="radio"
+                  class="form-check-input"
+                  name="flex3"
+                  id="checked3_4"
+                  required
+                />
+                <label for="checked3_4" class="form-check-label"
+                  >(4)그렇다.</label
+                >
+                <input
+                  type="radio"
+                  class="form-check-input"
+                  name="flex3"
+                  id="checked3_5"
+                  required
+                />
+                <label for="checked3_5" class="form-check-label"
+                  >(5)매우 그렇다.</label
+                >
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div>
+                  4. 사용중인 제품의 디자인은 만족스러우신가요? (답은 한가지만
+                  선택 가능)
+                </div>
+                <div class="form-check form-check-inline">
+                  <input
+                    type="radio"
+                    class="form-check-input"
+                    name="flex4"
+                    id="checked4_1"
+                    required
+                  />
+                  <label for="checked4_1" class="form-check-label"
+                    >(1) 전혀 아니다.</label
+                  >
+                </div>
+
+                <input
+                  type="radio"
+                  class="form-check-input"
+                  name="flex4"
+                  id="checked4_2"
+                  required
+                />
+                <label for="checked4_2" class="form-check-label"
+                  >(2)아니다.</label
+                >
+
+                <input
+                  type="radio"
+                  class="form-check-input"
+                  name="flex4"
+                  id="checked4_3"
+                  required
+                />
+                <label for="checked4_3" class="form-check-label"
+                  >(3)보통이다.</label
+                >
+                <input
+                  type="radio"
+                  class="form-check-input"
+                  name="flex4"
+                  id="checked4_4"
+                  required
+                />
+                <label for="checked4_4" class="form-check-label"
+                  >(4)그렇다.</label
+                >
+                <input
+                  type="radio"
+                  class="form-check-input"
+                  name="flex4"
+                  id="checked4_5"
+                  required
+                />
+                <label for="checked4_5" class="form-check-label"
+                  >(5)매우 그렇다.</label
+                >
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div>
+                  5. 사용중인 제품은 사용이 편리한가요? (답은 한가지만 선택
+                  가능)
+                </div>
+                <div class="form-check form-check-inline">
+                  <input
+                    type="radio"
+                    class="form-check-input"
+                    name="flex5"
+                    id="checked5_1"
+                    required
+                  />
+                  <label for="checked5_1" class="form-check-label"
+                    >(1) 전혀 아니다.</label
+                  >
+                </div>
+
+                <input
+                  type="radio"
+                  class="form-check-input"
+                  name="flex5"
+                  id="checked5_2"
+                  required
+                />
+                <label for="checked5_2" class="form-check-label"
+                  >(2)아니다.</label
+                >
+
+                <input
+                  type="radio"
+                  class="form-check-input"
+                  name="flex5"
+                  id="checked5_3"
+                  required
+                />
+                <label for="checked5_3" class="form-check-label"
+                  >(3)보통이다.</label
+                >
+                <input
+                  type="radio"
+                  class="form-check-input"
+                  name="flex5"
+                  id="checked5_4"
+                  required
+                />
+                <label for="checked5_4" class="form-check-label"
+                  >(4)그렇다.</label
+                >
+                <input
+                  type="radio"
+                  class="form-check-input"
+                  name="flex5"
+                  id="checked5_5"
+                  required
+                />
+                <label for="checked5_5" class="form-check-label"
+                  >(5)매우 그렇다.</label
+                >
+              </td>
+            </tr>
+          </table>
+          <div class="d-flex justify-content-center">
+            <button class="mx-3 w-25 btn btn-warning border-dark" type="submit">
+              답안 제출
+            </button>
+          </div>
+        </form>
+      </main>
+    </div>
+    <footer
+      class="fixed-bottom"
+      style="
+        background-color: RGB(222, 220, 238);
+        color: RGB(106, 96, 169);
+        font-weight: 800;
+      "
+    >
+      <nav class="navbar">
+        <div class="container-fluid navbar-brand d-flex justify-content-center">
+          KH Toy Project- Team SUN
+        </div>
+      </nav>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

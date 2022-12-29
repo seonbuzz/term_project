@@ -1,6 +1,7 @@
 package com.retoree.term_project.servlets;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -13,7 +14,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet(urlPatterns = "") //아직 작성x
+@WebServlet(urlPatterns = "/surveyServlet") 
 public class SurveyServlet extends HttpServlet{
 
     @Override
@@ -22,31 +23,38 @@ public class SurveyServlet extends HttpServlet{
        String questions_Uid = request.getParameter("QUESTIONS_UID");
 
        SurveyWithDB surveyWithDB = new SurveyWithDB();
+      
        HashMap<String, Object> question = null;
-       ArrayList<HashMap> answer_list = null;
+       ArrayList<HashMap> answers = null;
+    
        try {
-        question = surveyWithDB.getQuestion(questions_Uid);
-
-        System.out.println(question.get("QUESTIONS_UID"));
-        System.out.println(question.get("QUESTIONS"));
-        System.out.println(question.get("ORDERS"));
+      question = surveyWithDB.getQuestion(questions_Uid);
+        answers= surveyWithDB.getAnswersList();
+        for(int i = 0; i< question.size(); i++){
+            HashMap<String, Object>  questions;
+            HashMap<String, Object> questions_list =  (HashMap<String, Object>) question.get(i);
+        }
        
-        answer_list = surveyWithDB.getAnswerList(questions_Uid);
+            answers = surveyWithDB.getAnswersList();
        } catch (Exception e) {
         e.printStackTrace();
        }
-        for(int i = 0; i< answer_list.size(); i++){
-            HashMap<String,Object> answer = answer_list.get(i);
-            System.out.println(answer.get("ORDERS"));
-            System.out.println(answer.get("EXAMPLE"));
-        }
+       for (int i = 0; i < answers.size(); i++) {
+                   HashMap<String, Object> answers_list = answers.get(i);
+               }
         request.setAttribute("question", question);
-        request.setAttribute("answer_list", answer_list);
-
+        request.setAttribute("answers", answers);
+      
+     
        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/survey.jsp");
        requestDispatcher.forward(request, response);
     }
     
-
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+     
+        this.doGet(request, response);
+    }
 
 }
+

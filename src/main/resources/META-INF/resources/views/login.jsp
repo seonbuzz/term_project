@@ -58,7 +58,7 @@
                 <input
                   type="text"
                   class="form-control"
-                  name=""
+                  name="userID"
                   id=""
                   placeholder="ID를 입력하세요"
                   required
@@ -69,7 +69,7 @@
                 <input
                   type="password"
                   class="form-control"
-                  name=""
+                  name="userPwd"
                   id=""
                   placeholder="비밀번호를 입력하세요"
                   required

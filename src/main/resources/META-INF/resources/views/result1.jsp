@@ -30,7 +30,76 @@ ArrayList survey_answer = (ArrayList)request.getAttribute("survey_answer");
     <div class="container border border-dark rounded text-center w-100 mt-4">
       <main class="p-5">
         <div class="text-center pb-5">회원님의 설문조사 결과입니다.</div>
-
+        <%--  --%>
+        <table
+          class="table table-primary table-bordered border-dark text-center"
+        >
+          <thead>
+            <tr class="table-light border-dark">
+              <th>질문</th>
+              <th>답문</th>
+            </tr>
+          </thead>
+          <tbody>
+          <% for(int i=0; i<survey_answer.size();i++){
+            String answer = (String)survey_answer.get(i);%>
+            <tr>
+              <td>1. 현재 사용중인 제품을 선택해 주세요.</td>
+              <td>
+                <%= answer.charAt(answer.length()-1)%>
+                <div><%
+                if(answer.length()<4){
+                  switch(answer){
+                    case "E1":%>
+                    (매우 아니다)
+                    <%
+                    break;
+                    case "E2":%>
+                    (아니다)
+                    <%
+                    break;
+                    case "E3":%>
+                    (보통이다)
+                    <%
+                    break;
+                    case "E4":%>
+                    (그렇다)
+                    <%
+                    break;
+                    case "E5":%>
+                    (매우 그렇다)
+                  <%}
+                }else{
+                  switch(answer){
+                    case "E1-1":%>
+                    (무선 이어폰)
+                    <%
+                    break;
+                    case "E1-2":%>
+                    (헤드셋)
+                    <%
+                    break;
+                    case "E1-3":%>
+                    (유선 이어폰)
+                    <%
+                    break;
+                  }
+                }
+                %></div>
+              </td>
+            </tr>
+          <% }%>
+            
+            
+          </tbody>
+        </table>
+        <br /><br /><br />
+        <table>
+          <a class="btn btn-lg btn-warning border-dark" href="./index.html"
+            >메인</a
+          >
+        </table>
+        <%--  --%>
         <table
           class="table table-primary table-bordered border-dark text-center"
         >

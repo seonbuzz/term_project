@@ -79,10 +79,20 @@
         <form action="./survey_submit.html" method="get">
           <table class="table table-borderless">
           <%-- <tr>부터 --%>
-          <%
-          Array 
+          <%-- 문항 --%>
+            <div> <%= orders %>. <%= question %> </div>
+         <%
+          ArrayList<HashMap> answer_list = question.get("answer_list"); 
           %>
-           <%-- </tr>까지 --%>
+          
+          <%-- 답항 --%>
+          <%
+          ArrayList<HashMap> answer_list = null;
+          answer_list = (ArrayList<HashMap>)request.getAttribute("answer_list");
+           %>
+          <% for(int i = 0; i < answer_list.size; i++){
+            HashMap<String,Object> answer = answer_list.get(i);
+         <% }%>
           </table>
           <div class="d-flex justify-content-center">
             <button class="mx-3 w-25 btn btn-warning border-dark" type="submit">

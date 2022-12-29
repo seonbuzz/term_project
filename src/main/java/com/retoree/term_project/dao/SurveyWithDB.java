@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class SurveyWithDB{
-     //추가됨
+   
 
     public HashMap<String, Object> getQuestion(String questionUid) throws SQLException{ 
         

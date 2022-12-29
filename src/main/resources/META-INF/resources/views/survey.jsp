@@ -26,20 +26,20 @@
           <table class="table table-borderless">
                  <%-- 답항,설문 --%>
           <%
-          ArrayList<HashMap> answer_list = null;
-          answer_list = (ArrayList<HashMap>)request.getAttribute("answer_list");
+          ArrayList<HashMap> answers_list = null;
+          answers_list = (ArrayList<HashMap>)request.getAttribute("answers_list");
        
           %>
            
-          <% for(int i = 0; i < answer_list.size; i++){
-            HashMap<String,Object> question = (HashMap<String, Object>)answer.get("question");
-            HashMap<String,Object> answer = answer_list.get(i);
+          <% for(int i = 0; i < answers_list.size; i++){
+            HashMap<String,Object> questions = (HashMap<String, Object>)answers.get("questions");
+            HashMap<String,Object> answers = answers_list.get(i);
          <% }%>
 
             <div> <%= orders %>. <%= question %> </div>
 
           <%
-          ArrayList<HashMap> answer_list = question.get("answer_list"); 
+          ArrayList<HashMap> answers_list = questions.get("answers_list"); 
           %>
          <tr>
               <td>

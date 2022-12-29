@@ -32,7 +32,7 @@ public class SurveyServlet extends HttpServlet{
         answers= surveyWithDB.getAnswersList();
         for(int i = 0; i< question.size(); i++){
             HashMap<String, Object>  questions;
-            HashMap<String, Object> questions_list =  (HashMap<String, Object>) question.get(i);
+            HashMap<String, Object> question_list =  (HashMap<String, Object>) question.get(i);
         }
        
             answers = surveyWithDB.getAnswersList();

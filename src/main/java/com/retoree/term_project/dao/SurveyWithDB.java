@@ -7,9 +7,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class SurveyWithDB{
-   
-
-    public HashMap<String, Object> getQuestion(String questions_Uid) throws SQLException{ //quesionsUid
+   public HashMap<String, Object> getQuestion(String questions_Uid) throws SQLException{ //quesionsUid
         
         Commons commons = new Commons();
         Statement statement = commons.getStatement();

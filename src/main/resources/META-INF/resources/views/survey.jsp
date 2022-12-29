@@ -32,7 +32,7 @@
           %>
            
           <% for(int i = 0; i < answers_list.size; i++){
-            HashMap<String,Object> questions = (HashMap<String, Object>)answers.get("questions");
+            HashMap<String,Object> question = (HashMap<String, Object>)answers.get("question");
             HashMap<String,Object> answers = answers_list.get(i);
          <% }%>
 

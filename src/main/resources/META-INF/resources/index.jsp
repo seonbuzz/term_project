@@ -15,8 +15,7 @@
     <link rel="stylesheet" href="./css/all.css" />
   </head>
   <body>
-        <%@ include file="views/header.jsp" %>
-
+    <%@ include file="views/header.jsp" %>
 
     <div class="container border border-dark rounded bg-white my-4">
       <main class="p-5">

@@ -66,7 +66,7 @@ Member loginUser = (Member)session.getAttribute("loginUser");
         <div class="pt-4">
           회원이 아니신가요?
           <button class="btn btn-sm btn-secondary">
-            <a class="text-light text-decoration-none" href="/SignUpServlet">
+            <a class="text-light text-decoration-none" href="/signUpServlet">
               회원가입</a
             >
           </button>

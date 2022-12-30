@@ -33,13 +33,13 @@ String a= question.get("QUESTIONS");
       <main>
         <form action="./survey_submit.html" method="get">
           <table class="table table-borderless">
-                  <%-- <% for(int i=0; i<questions.size();i++){
+                  <% for(int i=0; i<questions.size();i++){
             HashMap<String, String> question = questions.get(i);
 
              String question = (String)questions.get("QUESTION");
                String question_ID = (String) questions.get("QUESTION_ID");
             int order = (int) questions.get("ORDERS"); %>
-           <%}%> --%>
+           <%}%>
           </table>
           <div class="d-flex justify-content-center">
             <button class="mx-3 w-25 btn btn-warning border-dark" type="submit">

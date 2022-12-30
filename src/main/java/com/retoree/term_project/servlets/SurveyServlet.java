@@ -20,22 +20,56 @@ public class SurveyServlet extends HttpServlet{
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
        
         SurveyWithDB surveyWithDB = new SurveyWithDB();
-        ArrayList<HashMap<String, String>> questions = surveyWithDB.getQuestions();
 
-        for(int i =0 ; i<questions.size(); i++){
+        ArrayList<HashMap<String, String>> questions = surveyWithDB.getQuestions();
+        ArrayList<HashMap<String, String>>answers = surveyWithDB.getAnswersList();
+
+        for(int i = 0; i<questions.size(); i++){
             System.out.println(questions.get(i).get("QUESTIONS"));
+        }
+        for(int i = 0; i<answers.size();i++){
+            System.out.println(answers.get(i).get("ANSWERS"));
         }
 
         request.setAttribute("questions", questions);
+        request.setAttribute("answers", answers);
+
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/survey.jsp");
         requestDispatcher.forward(request, response);
+    }
+}
        
        
+   
+
+
+
        
+    //나중에한거   
+// @WebServlet(urlPatterns = "/surveyServlet") 
+// public class SurveyServlet extends HttpServlet{
+// @Override
+//     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
        
-       
-       
-       
+//         SurveyWithDB surveyWithDB = new SurveyWithDB();
+
+//         ArrayList<HashMap<String, String>> questions = surveyWithDB.getQuestions();
+//         ArrayList<HashMap<String, String>>answers = surveyWithDB.getAnswersList();
+
+//         for(int i = 0; i<questions.size(); i++){
+//             System.out.println(questions.get(i).get("QUESTIONS"));
+//         }
+//         for(int i = 0; i<answers.size();i++){
+//             System.out.println(answers.get(i).get("ANSWERS"));
+//         }
+
+//         request.setAttribute("questions", questions);
+//         request.setAttribute("answers", answers);
+        
+//         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/survey.jsp");
+//         requestDispatcher.forward(request, response);
+//     }
+// }
        
        
         // input type
@@ -71,7 +105,7 @@ public class SurveyServlet extends HttpServlet{
 
     //    RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/survey.jsp");
     //    requestDispatcher.forward(request, response);
-    }
+    //}
     
     // @Override
     // protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -79,5 +113,5 @@ public class SurveyServlet extends HttpServlet{
     //     this.doGet(request, response);
     // }
 
-}
+//}
 

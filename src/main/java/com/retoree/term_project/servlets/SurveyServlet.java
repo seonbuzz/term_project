@@ -17,7 +17,9 @@ import jakarta.servlet.http.HttpServletResponse;
 @WebServlet(urlPatterns = "/surveyServlet") 
 public class SurveyServlet extends HttpServlet{
 
-    @Override
+ private Object questions;
+
+@Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
        // input type
        String questions_Uid = request.getParameter("QUESTIONS_UID");
@@ -28,33 +30,36 @@ public class SurveyServlet extends HttpServlet{
        ArrayList<HashMap> answers = null;
     
        try {
-      question = surveyWithDB.getQuestion(questions_Uid);
-        answers= surveyWithDB.getAnswersList();
-        for(int i = 0; i< question.size(); i++){
-            HashMap<String, Object>  questions;
-            HashMap<String, Object> question_list =  (HashMap<String, Object>) question.get(i);
+        questions = surveyWithDB.getQuestion(questions_Uid);
+        answers = surveyWithDB.getAnswersList(questions_Uid);
+        // System.out.println(question.get("QUESTIONS_UID"));
+        // System.out.println(question.get("QUESTIONS"));
+        // System.out.println(question.get("ORDERS"));
+        for (int i = 0; i <  question.size(); i++) {
+            HashMap<String, Object> questions_list =  ((HashMap<String, Object>) questions).get(i);
         }
-       
-            answers = surveyWithDB.getAnswersList();
-       } catch (Exception e) {
+
+        answers = surveyWithDB.getAnswersList(questions_Uid);
+    } catch (SQLException e) {
         e.printStackTrace();
-       }
-       for (int i = 0; i < answers.size(); i++) {
-                   HashMap<String, Object> answers_list = answers.get(i);
-               }
-        request.setAttribute("question", question);
-        request.setAttribute("answers", answers);
-      
-     
+    }
+    for(int i=0;i < answers.size();i++){
+        HashMap<String, Object>  answer = answers.get(i);
+        // System.out.println(answer.get("ORDERS"));
+        // System.out.println(answer.get("EXAMPLE"));
+    }
+    request.setAttribute("questions", questions);
+    request.setAttribute("answers", answers);
+
        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/survey.jsp");
        requestDispatcher.forward(request, response);
     }
     
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    // @Override
+    // protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
      
-        this.doGet(request, response);
-    }
+    //     this.doGet(request, response);
+    // }
 
 }
 

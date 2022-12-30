@@ -25,7 +25,7 @@
         <form action="./survey_submit.html" method="get">
           <table class="table table-borderless">
                  <%-- 답항,설문 --%>
-          <%
+          <%-- <%
           ArrayList<HashMap> answers_list = null;
           answers_list = (ArrayList<HashMap>)request.getAttribute("answers_list");
        
@@ -40,7 +40,7 @@
 
           <%
           ArrayList<HashMap> answers_list = questions.get("answers_list"); 
-          %>
+          %> --%>
          <tr>
               <td>
                 <div>

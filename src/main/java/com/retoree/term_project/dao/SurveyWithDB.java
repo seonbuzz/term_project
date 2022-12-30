@@ -49,9 +49,9 @@ public class SurveyWithDB{
       return answers_list;
       
     }
-    public ArrayList<HashMap> getAnswersList() {
-        return null;
+
+       
     }
-}
+
 
     

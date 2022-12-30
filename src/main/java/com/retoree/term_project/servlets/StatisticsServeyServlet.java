@@ -13,24 +13,21 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet(urlPatterns="/statisticsUsersServeyServlet")
-public class StatisticsUsersServeyServlet extends HttpServlet{
+@WebServlet(urlPatterns="/statisticsServeyServlet")
+public class StatisticsServeyServlet extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         StatisticsWithDB db = new StatisticsWithDB();
-        ArrayList userNameArr = new ArrayList<>();
-        ArrayList survey_answers = new ArrayList<>();
-        ArrayList<HashMap<String, String>> statistics = new ArrayList<>();
+        HashMap<String, String> statistics = new HashMap<>();
         // String checkUid="";
-        userNameArr = db.getUsersInfo();
-        survey_answers =db.getUsersServey();
-        // statistics = db.getStatisticsSurvey();
-        
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/result2.jsp");
-        request.setAttribute("userNameArr", userNameArr);
-        request.setAttribute("survey_answers", survey_answers);
-        
 
+        statistics = db.getStatisticsSurvey();
+        System.out.println(statistics);
+
+
+
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/result3.jsp");
+        request.setAttribute("statistics", statistics);
 
         requestDispatcher.forward(request, response);
     }

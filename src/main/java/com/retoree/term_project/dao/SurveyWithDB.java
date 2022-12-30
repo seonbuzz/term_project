@@ -48,7 +48,7 @@ public class SurveyWithDB{
       //                    "INNER JOIN EXAMPLE_LIST "+
       //                    "ON ANSWERS.EXAMPLE_UID = EXAMPLE_LIST.EXAMPLE_UID "+
       //                    "WHERE QUESTIONS_UID = '"+ Q1 +"' " +
-      //                    "ORDER BY QUESTIONS_UID ";
+      //                    "ORDER BY QUESTIONS_UID "; //답 나옴
                         
       String query = "SELECT ANSWERS.QUESTIONS_UID, EXAMPLE_LIST.ORDERS, EXAMPLE_LIST.EXAMPLE " +
                          "FROM ANSWERS "+

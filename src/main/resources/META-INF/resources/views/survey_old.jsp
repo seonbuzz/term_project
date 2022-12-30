@@ -1,7 +1,5 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="java.util.ArrayList"%>
-<%@ page import="java.util.HashMap"%>
-
+<%-- <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.util.HashMap, java.util.ArrayList" %> --%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,28 +16,39 @@
     <title>SUN - 설문</title>
   </head>
   <body>
-
-<%
-ArrayList<HashMap<String, String>> questions = (ArrayList<HashMap<String, String>>)request.getAttribute("questions");
-HashMap<String, String> question = questions.get(0);
-String a= question.get("QUESTIONS");
-%> 
-    <%@ include file="header.jsp" %>
-<%=a%>
-
-
-
+   <%@ include file="header.jsp" %>
+    
     <div
       class="container border d-flex justify-content-center border-dark rounded form-signin mt-4 p-5"
     >
       <main>
         <form action="./survey_submit.html" method="get">
           <table class="table table-borderless">
-            <tr>
+<%-- <%
+ArrayList<HashMap<String, String>> questions = (ArrayList<HashMap<String, String>>)request.getAttribute("questions");
+%> --%>
+
+                 <%-- 답항,설문 --%>
+          <%-- <%
+          ArrayList<HashMap> answers_list = null;
+          answers_list = (ArrayList<HashMap>)request.getAttribute("answers_list");
+       
+          %>
+           
+          <% for(int i = 0; i < answers_list.size; i++){
+            HashMap<String,Object> question = (HashMap<String, Object>)answers.get("question");
+            HashMap<String,Object> answers = answers_list.get(i);
+         <% }%>
+
+            <div> <%= orders %>. <%= question %> </div>
+
+          <%
+          ArrayList<HashMap> answers_list = questions.get("answers_list"); 
+          %> --%>
+         <tr>
               <td>
                 <div>
-                  1. 현재 사용중인 제품을 선택해주세요. (답은 한가지만 선택
-                  가능)
+                  1. 현재 사용중인 제품을 선택해주세요. (답은 한가지만 선택가능)
                 </div>
                 <div class="form-check">
                   <input
@@ -332,6 +341,7 @@ String a= question.get("QUESTIONS");
                 >
               </td>
             </tr>
+          
           </table>
           <div class="d-flex justify-content-center">
             <button class="mx-3 w-25 btn btn-warning border-dark" type="submit">
@@ -341,7 +351,7 @@ String a= question.get("QUESTIONS");
         </form>
       </main>
     </div>
-    <%@ include file="footer.jsp" %>
+  <%@ include file="footer.jsp" %>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
@@ -349,3 +359,33 @@ String a= question.get("QUESTIONS");
     ></script>
   </body>
 </html>
+<%-- <% ArrayList<HashMap> question = (ArrayList<HashMap>)request.getAttribute("question");
+      ArrayList<HashMap> answer = (ArrayList<HashMap>) request.getAttribute("answer"); 
+    %>
+
+
+    <main class="d-flex align-items-center mt-5" style="height: 40rem">
+      <div class="container">
+        <form action="./index.html">
+          <div class="mb-3">
+            <% for(int i=0;i<question.size();i++){ 
+              HashMap<String, Object> questions_list = question.get(i);%>
+            <div class="border bg-primary bg-opacity-10 mb-1 p-1 rounded"><%= (i+1) %>. <%= questions_list.get("QUESTION") %></div>
+            <div class="row">
+              <div class="col">
+                <% for(int j=0;j<answer.size();j++){ 
+                HashMap<String, Object> answers_list = answer.get(j);%>
+                <input type="radio" class="form-check-input" name="survey_<%= (i+1) %>" id="radio<%= (i+1) %>-<%= (j+1) %>" value="survey<%= (i+1) %>-<%= (j+1) %>" />
+                <label for="radio<%= (i+1) %>-<%= (j+1) %>" class="form-check-label"> (<%= (j+1) %>)<%= answers_list.get("ANSWER") %></label>
+                <% } %>
+              </div>
+            </div>
+            <% } %>
+            <div class="d-flex justify-content-center mt-5">
+              <button type="submit" class="btn bg-primary bg-opacity-10">제출하기</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </main>
+

@@ -6,6 +6,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import com.mysql.cj.protocol.Resultset;
+
 public class SurveyWithDB{
    public HashMap<String, Object> getQuestion(String questions_Uid) throws SQLException{ //quesionsUid
         
@@ -51,7 +53,31 @@ public class SurveyWithDB{
     }
 
        
+    public ArrayList<HashMap<String, String>> getQuestions(){
+      Commons commons = new Commons();
+      Statement statement = commons.getStatement();
+
+      String query = "select * from questions_list order by ORDERS;";
+
+      
+      ArrayList<HashMap<String, String>> questions = new ArrayList<>();
+      try {
+        ResultSet resultSet = statement.executeQuery(query);
+        while(resultSet.next()){
+          HashMap<String, String> question = new HashMap<>();
+          question.put("QUESTIONS_UID", resultSet.getString("QUESTIONS_UID"));
+          question.put("QUESTIONS", resultSet.getString("QUESTIONS"));
+          question.put("ORDERS", resultSet.getString("ORDERS"));
+
+          questions.add(question);
+      }
+      } catch (SQLException e) {
+        e.getStackTrace();
+      }
+      
+      return questions;
     }
+}
 
 
     

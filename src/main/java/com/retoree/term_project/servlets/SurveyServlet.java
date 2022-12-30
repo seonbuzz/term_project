@@ -16,43 +16,61 @@ import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet(urlPatterns = "/surveyServlet") 
 public class SurveyServlet extends HttpServlet{
-
- private Object questions;
-
 @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-       // input type
-       String questions_Uid = request.getParameter("QUESTIONS_UID");
+       
+        SurveyWithDB surveyWithDB = new SurveyWithDB();
+        ArrayList<HashMap<String, String>> questions = surveyWithDB.getQuestions();
 
-       SurveyWithDB surveyWithDB = new SurveyWithDB();
-      
-       HashMap<String, Object> question = null;
-       ArrayList<HashMap> answers = null;
-    
-       try {
-        questions = surveyWithDB.getQuestion(questions_Uid);
-        answers = surveyWithDB.getAnswersList(questions_Uid);
-        // System.out.println(question.get("QUESTIONS_UID"));
-        // System.out.println(question.get("QUESTIONS"));
-        // System.out.println(question.get("ORDERS"));
-        for (int i = 0; i <  question.size(); i++) {
-            HashMap<String, Object> questions_list =  ((HashMap<String, Object>) questions).get(i);
+        for(int i =0 ; i<questions.size(); i++){
+            System.out.println(questions.get(i).get("QUESTIONS"));
         }
 
-        answers = surveyWithDB.getAnswersList(questions_Uid);
-    } catch (SQLException e) {
-        e.printStackTrace();
-    }
-    for(int i=0;i < answers.size();i++){
-        HashMap<String, Object>  answer = answers.get(i);
-        // System.out.println(answer.get("ORDERS"));
-        // System.out.println(answer.get("EXAMPLE"));
-    }
-    request.setAttribute("questions", questions);
-    request.setAttribute("answers", answers);
+        request.setAttribute("questions", questions);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/survey.jsp");
+        requestDispatcher.forward(request, response);
+       
+       
+       
+       
+       
+       
+       
+       
+       
+        // input type
+       // 세션으로 불러올 값
+        //String questions_Uid = request.getParameter("QUESTIONS_UID");
+    //     String questions_Uid = "U1";
+    //    SurveyWithDB surveyWithDB = new SurveyWithDB();
+      
+    //    HashMap<String, Object> question = null;
+    //    ArrayList<HashMap> answers = null;
+    
+    //    try {
+    //     questions = surveyWithDB.getQuestion(questions_Uid);
+    //     answers = surveyWithDB.getAnswersList(questions_Uid);
+    //     // System.out.println(question.get("QUESTIONS_UID"));
+    //     // System.out.println(question.get("QUESTIONS"));
+    //     // System.out.println(question.get("ORDERS"));
+    //     for (int i = 0; i <  question.size(); i++) {
+    //         HashMap<String, Object> questions_list =  (HashMap<String, Object>) questions.get(i);
+    //     }
 
-       RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/survey.jsp");
-       requestDispatcher.forward(request, response);
+    //     answers = surveyWithDB.getAnswersList(questions_Uid);
+    // } catch (SQLException e) {
+    //     e.printStackTrace();
+    // }
+    // for(int i=0;i < answers.size();i++){
+    //     HashMap<String, Object>  answer = answers.get(i);
+    //     // System.out.println(answer.get("ORDERS"));
+    //     // System.out.println(answer.get("EXAMPLE"));
+    // }
+    // request.setAttribute("questions", questions);
+    // request.setAttribute("answers", answers);
+
+    //    RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/survey.jsp");
+    //    requestDispatcher.forward(request, response);
     }
     
     // @Override

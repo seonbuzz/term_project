@@ -23,22 +23,23 @@ public class LoginController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
-        String id = request.getParameter("id");
-        String pwd = request.getParameter("pwd");
-
-        // System.out.println(id);
-        // System.out.println(pwd);
-
-        // 요청처리
         try {
+            String id = request.getParameter("id");
+            String pwd = request.getParameter("pwd");
+
+            // System.out.println(id);
+            // System.out.println(pwd);
+
+            // 요청처리
             Member loginUser = new LoginWithDB().loginMember(id, pwd);
             System.out.println(loginUser);
 
             if (loginUser == null) {
                 // 조회결과없음 == => 에러페이지 나오게 하기
-                request.setAttribute("errorMsg", "아이디 또는 비밀번호가 맞지 않습니다.");
+                // request.setAttribute("errorMsg", "아이디 또는 비밀번호가 맞지 않습니다.");
+                RequestDispatcher view = request.getRequestDispatcher("views/login.jsp");
 
-                RequestDispatcher view = request.getRequestDispatcher("views/errorPage.jsp");
+                // RequestDispatcher view = request.getRequestDispatcher("views/errorPage.jsp");
                 view.forward(request, response);
 
             } else {
@@ -49,6 +50,8 @@ public class LoginController extends HttpServlet {
                 HttpSession session = request.getSession();
                 session.setAttribute("loginUser", loginUser);
 
+                RequestDispatcher view = request.getRequestDispatcher("views/welcome.jsp");
+                view.forward(request, response);
                 // response.sendRedirect(request.getContextPath()); 일단 쓰지 않기
 
             }

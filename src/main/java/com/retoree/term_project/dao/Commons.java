@@ -32,7 +32,7 @@ public class Commons {
         String user = "root";
         String password = "*khacademy!";
         // String password = "root";
-
+        
         Connection connection = DriverManager.getConnection(url, user, password);
 
         return connection;

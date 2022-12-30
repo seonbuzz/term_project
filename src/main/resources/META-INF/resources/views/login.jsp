@@ -1,5 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<%@ page import="com.retoree.term_project.bean.Member" %>
+<% 
+Member loginUser = (Member)session.getAttribute("loginUser");
+%>
+  <!-- 로그인 시도 전 login.jsp 로딩 시 : null
+            성공 후                  : 로그인 유저의 정보가 담겨있는 Member 객체 -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -17,7 +22,8 @@
   </head>
   <body>
      <%@ include file="header.jsp" %>
-
+  
+<% if(loginUser == null) { %>
 
     <div
       class="container border border-dark rounded text-center form-signin w-100 mt-4"
@@ -58,6 +64,7 @@
           
         </div>
 </form>
+
         <div class="pt-4">
           회원이 아니신가요?
           <button class="btn btn-sm btn-secondary">
@@ -67,6 +74,18 @@
           </button>
         </div>
       </main>
+    </div>
+    <% } else { %>
+
+    <div class="container border border-dark rounded bg-white my-4">
+      <main class="p-5">
+        <div class="text-center p-3"><%= loginUser.getName() %>님의 방문을 환영합니다.</div>
+        <div align=""center">
+        <a href="">로그아웃</a>
+        </div>
+      </main>
+    </div>
+   <% } %>
 
       <%@ include file="footer.jsp" %>
     <script

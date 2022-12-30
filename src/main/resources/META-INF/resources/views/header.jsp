@@ -16,7 +16,7 @@
                         <div class='navbar-nav'>
                             <a href='/statisticsPrintUserServeyServlet' class='nav-link' style='color: RGB(106, 96, 169)'>회원 설문/답문 조회</a>
                             <a href='./statisticsUsersServeyServlet' class='nav-link' style='color: RGB(106, 96, 169)'>설문자별 통계</a>
-                            <a href='./result3.html' class='nav-link' style='color: RGB(106, 96, 169)'>질문별 총 답변 수</a>
+                            <a href='./statisticsServeyServlet' class='nav-link' style='color: RGB(106, 96, 169)'>질문별 총 답변 수</a>
                         </div>
                     </div>
                 </div>

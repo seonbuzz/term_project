@@ -13,15 +13,16 @@ public class StatisticsWithDB {
     }
     public StatisticsWithDB(String users_Uid){
         //생성자 통해서 세션값 받아올때.
-        users_Uid = this.users_Uid;
+        super();
+        this.users_Uid = users_Uid;
     }
     // 1. 회원 설문/답문 조회
 
     public ArrayList getUserServey(){
         Commons commons = new Commons();
         Statement statement = commons.getStatement();
-        users_Uid = "U1"; //테스트용 값
-        String query = "select * from survey where USERS_UID ='"+users_Uid+"'order by QUESTIONS_UID;";
+        //  users_Uid = "U1"; //테스트용 값
+        String query = "select * from survey where USERS_UID ='"+this.users_Uid+"'order by QUESTIONS_UID;";
         ArrayList survey_answer = new ArrayList<>();  
         try {
             ResultSet resultSet = statement.executeQuery(query);
@@ -37,8 +38,8 @@ public class StatisticsWithDB {
     public String getUserName(){
         Commons commons = new Commons();
         Statement statement = commons.getStatement();
-        users_Uid = "U1"; //테스트용 값
-        String query = "select * from users_list where USERS_UID ='"+users_Uid+"';";
+        //  users_Uid = "U1"; //테스트용 값
+        String query = "select * from users_list where USERS_UID ='"+this.users_Uid+"';";
         String userName ="";
         try {
             ResultSet resultSet = statement.executeQuery(query);

@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="java.util.HashMap"%>
+<%@ page import="com.retoree.term_project.bean.Member" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -21,6 +22,7 @@
 <%
 ArrayList survey_answer = (ArrayList)request.getAttribute("survey_answer");
 ArrayList questions = (ArrayList)request.getAttribute("questions");
+Member loginUser = (Member)request.getAttribute("loginUser");
 String userName = (String)request.getAttribute("userName");
 %> 
     <%@ include file="header.jsp" %>

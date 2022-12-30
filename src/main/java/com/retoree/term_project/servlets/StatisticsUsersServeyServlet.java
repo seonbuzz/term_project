@@ -12,17 +12,23 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 @WebServlet(urlPatterns="/statisticsUsersServeyServlet")
 public class StatisticsUsersServeyServlet extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession httpSession = request.getSession();
+        
         StatisticsWithDB db = new StatisticsWithDB();
+
         ArrayList userNameArr = userNameArr = db.getUsersInfo();
         HashMap<String, String> survey =  db.getUsersServey();
         
         System.out.println(survey.get("U1Q1"));
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/result2.jsp");
+        
+        request.setAttribute("loginData", httpSession.getAttribute("loginUser"));
         request.setAttribute("userNameArr", userNameArr);
         request.setAttribute("survey", survey);
 

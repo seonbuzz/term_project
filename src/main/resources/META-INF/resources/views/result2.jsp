@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="java.util.HashMap"%>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -47,7 +48,7 @@ HashMap<String, String> survey = (HashMap<String, String>)request.getAttribute("
               String userName = (String)userNameArr.get(i); 
                
               %>
-              
+              <%-- userNameArr에  --%>
             <tr>
               <td><%=userName%></td>
               <%for(int k=0; k<5 ;k++){

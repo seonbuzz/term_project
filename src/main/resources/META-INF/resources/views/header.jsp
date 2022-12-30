@@ -8,7 +8,7 @@
             <div class='container-fluid my-2 mx-5 align-items-start'>
                 <a href='./index' class='nav-link fs-5' style='width: 25%'>이어폰 만족도 조사</a>
                 <a href='./index' class='nav-link fs-5' style='width: 15%'>HOME</a>
-                <a href='./survey.html' class='nav-link fs-5' style='width: 15%'>설문</a>
+                <a href='./surveyServlet' class='nav-link fs-5' style='width: 15%'>설문</a>
                 <div style='width: 15%'>
                     <a href='#collapseId' class='navbar-toggler border-0 text-decoration-none fs-5 btn'
                         data-bs-toggle='collapse' style='color: RGB(106, 96, 169); font-weight: 800'>통계</a>
@@ -20,7 +20,7 @@
                         </div>
                     </div>
                 </div>
-                <a href='./login' class='nav-link fs-5' style='width: 15%'>로그인</a>
+                <a href='./loginServlet' class='nav-link fs-5' style='width: 15%'>로그인</a>
             </div>
         </nav>
     </header>

@@ -1,5 +1,8 @@
 use retoree_TermProject ;
 
+INSERT INTO ADMIN (ADMIN_UID, ADMIN_ID, ADMIN_PWD)
+VALUES ('AD1', "admin", "admin");
+
 INSERT INTO QUESTIONS_LIST (QUESTIONS_UID, QUESTIONS, ORDERS)
 VALUES ('Q1', "현재 사용중인 제품을 선택해주세요. (답은 한가지만 선택 가능)", 1);
 

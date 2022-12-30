@@ -18,9 +18,9 @@ public class LoginWithDB {
         PreparedStatement pstmt = null;
         ResultSet resultSet = null;
 
-        String query = "SELECT USERS_UID, PHONE, NAME, EMAIL, ID, PWD " +
-                "FROM USERS_LIST " +
-                "WHERE ID = ? AND PWD = ? ";
+        String query = " SELECT * " +
+                " FROM USERS_LIST " +
+                " WHERE ID = ? AND PWD = ? ";
 
         try {
 

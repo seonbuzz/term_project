@@ -26,8 +26,14 @@ String a= question.get("QUESTIONS");
 %> 
     <%@ include file="header.jsp" %>
 <%=a%>
+     
+           <%-- <% for(int i=0; i<questions.size();i++){
+            HashMap<String, String> question = questions.get(i);
 
-
+             String question = (String)questions.get("QUESTION");
+               String question_ID = (String) questions.get("QUESTION_ID");
+            int order = (int) questions.get("ORDERS"); %>
+           <%}%> --%>
 
     <div
       class="container border d-flex justify-content-center border-dark rounded form-signin mt-4 p-5"

@@ -22,17 +22,17 @@ public class SurveyServlet extends HttpServlet{
         SurveyWithDB surveyWithDB = new SurveyWithDB();
 
         ArrayList<HashMap<String, String>> questions = surveyWithDB.getQuestions();
-        ArrayList<HashMap<String, String>>answers = surveyWithDB.getAnswersList();
+       // ArrayList<HashMap<String, String>>answers = surveyWithDB.getAnswersList();
 
         for(int i = 0; i<questions.size(); i++){
             System.out.println(questions.get(i).get("QUESTIONS"));
         }
-        for(int i = 0; i<answers.size();i++){
-            System.out.println(answers.get(i).get("ANSWERS"));
-        }
+        //for(int i = 0; i<answers.size();i++){
+        //    System.out.println(answers.get(i).get("ANSWERS"));
+        //}
 
         request.setAttribute("questions", questions);
-        request.setAttribute("answers", answers);
+        //request.setAttribute("answers", answers);
 
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/survey.jsp");
         requestDispatcher.forward(request, response);

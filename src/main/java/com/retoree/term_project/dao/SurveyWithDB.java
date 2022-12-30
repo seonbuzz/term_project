@@ -74,7 +74,7 @@ public class SurveyWithDB{
       }                   
          return answers;
       }
-  }
+   }
 
 //다시한거
 // public ArrayList<HashMap<String, String>> getQuestions(){

@@ -19,7 +19,7 @@ public class LoginWithDB {
         ResultSet resultSet = null;
 
         String query = "SELECT USERS_UID, PHONE, NAME, EMAIL, ID, PWD " +
-                "FROM users_list " +
+                "FROM USERS_LIST " +
                 "WHERE ID = ? AND PWD = ? ";
 
         try {
@@ -31,7 +31,7 @@ public class LoginWithDB {
             resultSet = pstmt.executeQuery(); // 조회 결과가 있다면 1 row 출력 or not = nothing
 
             if (resultSet.next()) {
-                m = new Member(resultSet.getInt("users_uid"),
+                m = new Member(resultSet.getString("users_uid"),
                         resultSet.getString("phone"),
                         resultSet.getString("name"),
                         resultSet.getString("email"),

@@ -49,11 +49,12 @@ public class SurveyWithDB{
       //                    "ON ANSWERS.EXAMPLE_UID = EXAMPLE_LIST.EXAMPLE_UID "+
       //                    "WHERE QUESTIONS_UID = '"+ Q1 +"' " +
       //                    "ORDER BY QUESTIONS_UID ";
+                        
       String query = "SELECT ANSWERS.QUESTIONS_UID, EXAMPLE_LIST.ORDERS, EXAMPLE_LIST.EXAMPLE " +
                          "FROM ANSWERS "+
                          "INNER JOIN EXAMPLE_LIST "+
                          "ON ANSWERS.EXAMPLE_UID = EXAMPLE_LIST.EXAMPLE_UID "+
-                         "WHERE QUESTIONS_UID = '"+ QUESTIONS_UID +"' " +
+                         "WHERE QUESTIONS_UID = '"+ questions_Uid +"' " +
                          "ORDER BY QUESTIONS_UID ";
       ArrayList<HashMap<String, String>> answers = new ArrayList<>();
       try {

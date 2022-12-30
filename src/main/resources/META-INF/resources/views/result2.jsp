@@ -19,6 +19,7 @@
   <body>
 <%
 ArrayList userNameArr = (ArrayList)request.getAttribute("userNameArr");
+HashMap<String, String> survey = (HashMap<String, String>)request.getAttribute("survey");
 %>
 
 
@@ -44,21 +45,16 @@ ArrayList userNameArr = (ArrayList)request.getAttribute("userNameArr");
             
            <% for(int i=0; i<userNameArr.size();i++){
               String userName = (String)userNameArr.get(i); 
-              
+               
               %>
               
             <tr>
               <td><%=userName%></td>
-              <td><%=0%></td>
-              <td><%=1%></td>
-              <td><%=2%></td>
-              <td><%=3%></td>
-              <td><%=4%></td>
-              <%-- <td><%=survey.get(0)%></td> --%>
-              <%-- <td><%=(String)survey_answer.get(1)%></td> --%>
-              <%-- <td><%=(String)survey_answer.get(2)%></td> --%>
-              <%-- <td><%=(String)survey_answer.get(3)%></td> --%>
-              <%-- <td><%=(String)survey_answer.get(4)%></td> --%>
+              <%for(int k=0; k<5 ;k++){
+                String surveyStr = (String)survey.get("U"+(i+1)+"Q"+(k+1));
+                %>
+                <td><%=surveyStr.charAt(surveyStr.length()-1)%></td>
+              <%}%>
             </tr>
             <%}%>
 

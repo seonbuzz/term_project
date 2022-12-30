@@ -51,10 +51,10 @@ HashMap<String, String> statistics = (HashMap<String, String>)request.getAttribu
               <%}else{%>
                 <td><%= statistics.get("Q1E1-2")%></td>
               <%}%>
-              <%if(statistics.get("Q1E1-2")==null){%>
+              <%if(statistics.get("Q1E1-3")==null){%>
                 <td>0</td>
               <%}else{%>
-                <td><%= statistics.get("Q1E1-2")%></td>
+                <td><%= statistics.get("Q1E1-3")%></td>
               <%}%>
               <td>-</td>
               <td>-</td>

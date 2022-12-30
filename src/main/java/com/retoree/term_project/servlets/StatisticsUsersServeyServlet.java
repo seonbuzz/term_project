@@ -18,18 +18,13 @@ public class StatisticsUsersServeyServlet extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         StatisticsWithDB db = new StatisticsWithDB();
-        ArrayList userNameArr = new ArrayList<>();
-        ArrayList survey_answers = new ArrayList<>();
-        ArrayList<HashMap<String, String>> statistics = new ArrayList<>();
-        // String checkUid="";
-        userNameArr = db.getUsersInfo();
-        survey_answers =db.getUsersServey();
-        // statistics = db.getStatisticsSurvey();
+        ArrayList userNameArr = userNameArr = db.getUsersInfo();
+        HashMap<String, String> survey =  db.getUsersServey();
         
+        System.out.println(survey.get("U1Q1"));
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/result2.jsp");
         request.setAttribute("userNameArr", userNameArr);
-        request.setAttribute("survey_answers", survey_answers);
-        
+        request.setAttribute("survey", survey);
 
 
         requestDispatcher.forward(request, response);

@@ -29,7 +29,7 @@ Member loginUser = (Member)session.getAttribute("loginUser");
       <main class="p-5">
         <div class="row">
           <div class="col-lg-5 col-md-7 mx-auto">
-            <form action="/login.me" method="post">
+            <form action="/login" method="post">
               <div>로그인 화면입니다.</div>
               <div>아이디와 비밀번호를 입력해주세요.</div>
               <div class="input-group pt-4">
@@ -37,7 +37,7 @@ Member loginUser = (Member)session.getAttribute("loginUser");
                 <input
                   type="text"
                   class="form-control"
-                  name="userID"
+                  name="id"
                   id=""
                   placeholder="ID를 입력하세요"
                   required
@@ -48,7 +48,7 @@ Member loginUser = (Member)session.getAttribute("loginUser");
                 <input
                   type="password"
                   class="form-control"
-                  name="userPwd"
+                  name="pwd"
                   id=""
                   placeholder="비밀번호를 입력하세요"
                   required
@@ -66,7 +66,7 @@ Member loginUser = (Member)session.getAttribute("loginUser");
         <div class="pt-4">
           회원이 아니신가요?
           <button class="btn btn-sm btn-secondary">
-            <a class="text-light text-decoration-none" href="./signup.html">
+            <a class="text-light text-decoration-none" href="/SignUpServlet">
               회원가입</a
             >
           </button>
@@ -79,7 +79,7 @@ Member loginUser = (Member)session.getAttribute("loginUser");
       <main class="p-5">
         <div class="text-center p-3"><%= loginUser.getName() %>님의 방문을 환영합니다.</div>
         <div align=""center">
-        <a href="">로그아웃</a>
+        <a href="/logout">로그아웃</a>
         </div>
       </main>
     </div>

@@ -8,17 +8,14 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class LogoutController
- */
-@WebServlet("/logout.me")
+@WebServlet("/logout")
 public class LogoutController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        // 로그아웃 요청 처리 => session만료시키기 == 세션을 무효화시키기
+        // 로그아웃 요청 처리 => session만료
         // HttpSession session = request.getSession();
         // session.invalidate();
         request.getSession().invalidate();
@@ -31,8 +28,7 @@ public class LogoutController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // TODO Auto-generated method stub
-        doGet(request, response);
+        this.doGet(request, response);
     }
 
 }

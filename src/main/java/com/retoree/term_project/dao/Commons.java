@@ -12,8 +12,8 @@ public class Commons {
     public Statement getStatement() {
         String url = "jdbc:mysql://localhost:3306/retoree_termproject";
         String user = "root";
-        String password = "*khacademy!";
-        // String password = "root";
+        // String password = "*khacademy!";
+        String password = "root";
 
         Statement statement = null;
         try {
@@ -30,8 +30,8 @@ public class Commons {
 
         String url = "jdbc:mysql://localhost:3306/retoree_termproject";
         String user = "root";
-        String password = "*khacademy!";
-        // String password = "root";
+        // String password = "*khacademy!";
+        String password = "root";
         
         Connection connection = DriverManager.getConnection(url, user, password);
 

@@ -15,6 +15,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="./css/all.css" />
+
   </head>
   <body>
     <%@ include file="header.jsp" %>
@@ -23,7 +24,7 @@
       <main class="p-5">
       <div class="fs-3 text-center">회원가입</div>
       <hr />
-      <form action="/SignUpSubmitServlet" method="post" name="signupForm">
+      <form action="/SignUpSubmitServlet" method="post" name="signupForm" onsubmit="return submitForm()">
         <table class="table table-borderless">
           <tr>
             <th scope="row">아이디</th>
@@ -40,10 +41,13 @@
                 <button
                   type="button"
                   class="btn btn-light border-secondary"
-                  onclick="alert('')"
+                  onclick="checkId(this.form)"
+                  name = "btnCheckId"
                 >
                   중복확인
                 </button>
+                <!-- 중복 체크 여부 -->
+                <input type="hidden" name="idCheck" value = "idUnCheck">
               </div>
 
               <div class="small mx-2 my-1">
@@ -190,5 +194,39 @@
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
       crossorigin="anonymous"
     ></script>
+    <script type = "text/javascript">
+      function checkId() {
+        var signupForm = document.signupForm;
+        var id = signupForm.user_id.value;
+
+        if(id.length==0 || id == "") {
+          alert("아이디를 입력해주세요.");
+          signupForm.user_id.focus();
+        } else {
+          window.open("/views/signupIdCheck.jsp?user_id="+document.signupForm.user_id.value,"ID 중복 체크",
+          "toolbar=no, location=no, status=no, menubar=no, scrollbars=no, width=500, height=300");
+          if(request.getAttribute("idCheck") == 1) {
+            document.signupForm.idCheck.value = "idCheck"
+          } 
+        }
+      }
+
+      function submitForm() {
+        if(document.signupForm.user_id.value.length < 6  || document.signupForm.user_id.value.length > 16){
+          alert("아이디는 6자~16자까지 사용 가능합니다.");
+          return false;
+        } else if (document.signupForm.idCheck.value == "idUnCheck") {
+          alert("아이디 중복체크 필수입니다.");
+        } else if(document.signupForm.user_pw.value != document.signupForm.user_pw_confirm.value) {
+          alert("비밀번호가 일치하지 않습니다.");
+          return false;
+        } else if(document.signupForm.user_pw.value.length < 6  || document.signupForm.user_pw.value.length > 16) {
+          alert("비밀번호는 6자~16자까지 사용 가능합니다.");
+          return false;
+        } else {
+          return true;
+        }
+      }
+      </script>
   </body>
 </html>

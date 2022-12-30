@@ -2,6 +2,7 @@ package com.retoree.term_project.member.controller;
 
 import java.io.IOException;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -21,7 +22,10 @@ public class LogoutController extends HttpServlet {
         request.getSession().invalidate();
 
         // 응답페이지 => /jsp url재요청 => index페이지
-        response.sendRedirect(request.getContextPath());
+        // response.sendRedirect(request.getContextPath());
+
+        RequestDispatcher view = request.getRequestDispatcher("/index.jsp");
+        view.forward(request, response);
 
     }
 

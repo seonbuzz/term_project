@@ -6,10 +6,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import com.mysql.cj.xdevapi.Result;
 
 public class SignupWithDB {
     public int checkId(String checkID) {
+        // 중복 ID 체크
         int result = -1;
         Commons commons = new Commons();
         Statement statement = commons.getStatement();
@@ -35,6 +35,7 @@ public class SignupWithDB {
     }   
 
     public int number() {
+        // UID 생성하기 위해 DB에 들어있는 회원 수 + 1 값 반환
         Commons commons = new Commons();
         Statement statement = commons.getStatement();
         
@@ -54,6 +55,7 @@ public class SignupWithDB {
         
     }
     public int signUp(String usersUid, String id, String pwd, String name, String phone, String eamil) throws SQLException{
+        // 회원 정보 DB에 입력
         Commons commons = new Commons();
         String query ="INSERT INTO USERS_LIST " + 
         "VALUES(?, ?, ?, ?, ?, ?)";

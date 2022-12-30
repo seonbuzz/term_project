@@ -43,6 +43,8 @@ public class SignUpSubmitServlet extends HttpServlet {
     } catch (SQLException e) {
         e.printStackTrace();
     }
+    RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/signup_submit.jsp");
+    requestDispatcher.forward(request, response);
     }
 
     @Override

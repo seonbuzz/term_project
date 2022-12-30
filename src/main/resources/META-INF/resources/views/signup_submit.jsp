@@ -21,7 +21,7 @@
       <main class="p-5">
         <div class="text-center p-3">회원가입이 완료되었습니다.</div>
         <div class="d-flex justify-content-center p-3">
-          <a href="./login.html" class="btn btn-light border-dark"
+          <a href="/login" class="btn btn-light border-dark"
             >로그인 페이지로</a
           >
         </div>

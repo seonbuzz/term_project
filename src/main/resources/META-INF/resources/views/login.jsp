@@ -4,13 +4,11 @@
 Member loginUser = (Member)session.getAttribute("loginUser");
 %>
   <!-- 로그인 시도 전 login.jsp 로딩 시 : null
-            성공 후                  : 로그인 유저의 정보가 담겨있는 Member 객체 -->
+              성공 후                  : 로그인 유저의 정보가 담겨있는 Member 객체 -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/all.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
@@ -31,7 +29,7 @@ Member loginUser = (Member)session.getAttribute("loginUser");
       <main class="p-5">
         <div class="row">
           <div class="col-lg-5 col-md-7 mx-auto">
-            <form action="/jsp/login.me" method="post">
+            <form action="/login.me" method="post">
               <div>로그인 화면입니다.</div>
               <div>아이디와 비밀번호를 입력해주세요.</div>
               <div class="input-group pt-4">

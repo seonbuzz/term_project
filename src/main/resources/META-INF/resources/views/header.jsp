@@ -20,7 +20,7 @@
                         </div>
                     </div>
                 </div>
-                <a href='./login.html' class='nav-link fs-5' style='width: 15%'>로그인</a>
+                <a href='./login.me' class='nav-link fs-5' style='width: 15%'>로그인</a>
             </div>
         </nav>
     </header>

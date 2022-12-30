@@ -1,8 +1,9 @@
 package com.retoree.term_project.Bean;
+
 // 하나의 데이터를 관리하고 처리할 수 있는 기법을 jsp에서 구현하는 것 -> Java Beans
 public class Member {
 
-    private int usersUid;
+    private String usersUid;
     private String phone;
     private String name;
     private String email;
@@ -10,9 +11,9 @@ public class Member {
     private String pwd;
 
     // 기본 생성자, 매개변수 생성자, setter/getter, toString
-    public Member(int userUid, String phone, String name, String email, String id, String pwd) {
+    public Member(String usersUid, String phone, String name, String email, String id, String pwd) {
         super();
-        this.usersUid = userUid;
+        this.usersUid = usersUid;
         this.phone = phone;
         this.name = name;
         this.email = email;
@@ -20,11 +21,11 @@ public class Member {
         this.pwd = pwd;
     }
 
-    public int getUsersUid() {
+    public String getUsersUid() {
         return this.usersUid;
     }
 
-    public void setUsersUid(int usersUid) {
+    public void setUsersUid(String usersUid) {
         this.usersUid = usersUid;
     }
 

@@ -30,35 +30,34 @@ public class StatisticsPrintUserServeyServlet extends HttpServlet{
 
         }else{
             String userUid = loginUser.getUsersUid();
-        System.out.println(loginUser.getUsersUid());
-        StatisticsWithDB db = null;
-        ArrayList survey_answer = new ArrayList<>();
-        ArrayList questions = new ArrayList<>();
-        String userName ="";
+            System.out.println(loginUser.getUsersUid());
+            StatisticsWithDB db = null;
+            ArrayList survey_answer = new ArrayList<>();
+            ArrayList questions = new ArrayList<>();
+            String userName ="";
         
 
         
-        if(loginUser.getSurveyCheck().equals("YES")){
-            //설문 진행시
-            db = new StatisticsWithDB(userUid);
-            requestDispatcher = request.getRequestDispatcher("/views/result1.jsp");
-        }else if(loginUser.getSurveyCheck().equals("NO")){
-            //설문 미 진행시
-            db = new StatisticsWithDB(userUid);
-            requestDispatcher = request.getRequestDispatcher("/views/errorPage2.jsp");
-        }
-        
-        
-        
-        survey_answer = db.getUserServey();
-        questions = db.getQuestion();
-        userName = db.getUserName();
-        request.setAttribute("survey_answer", survey_answer);
-        request.setAttribute("questions", questions);
-        request.setAttribute("userName", userName);
-        requestDispatcher.forward(request, response);
+            if(loginUser.getSurveyCheck().equals("YES")){
+                //설문 진행시
+                db = new StatisticsWithDB(userUid);
+                requestDispatcher = request.getRequestDispatcher("/views/result1.jsp");
+            }else if(loginUser.getSurveyCheck().equals("NO")){
+                //설문 미 진행시
+                db = new StatisticsWithDB(userUid);
+                requestDispatcher = request.getRequestDispatcher("/views/errorPage2.jsp");
+            }
+            
+            
+            
+            survey_answer = db.getUserServey();
+            questions = db.getQuestion();
+            userName = db.getUserName();
+            request.setAttribute("survey_answer", survey_answer);
+            request.setAttribute("questions", questions);
+            request.setAttribute("userName", userName);
+            requestDispatcher.forward(request, response);
+        }   
     }
-        }
-        
     
 }

@@ -36,7 +36,8 @@ public class LoginWithDB {
                         resultSet.getString("name"),
                         resultSet.getString("email"),
                         resultSet.getString("id"),
-                        resultSet.getString("pwd"));
+                        resultSet.getString("pwd"),
+                        resultSet.getString("SURVEYCHEKE"));
             }
         } catch (SQLException e) {
             e.printStackTrace();

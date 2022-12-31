@@ -9,9 +9,10 @@ public class Member {
     private String email;
     private String id;
     private String pwd;
+    private String surveyCheck;
 
     // 기본 생성자, 매개변수 생성자, setter/getter, toString
-    public Member(String usersUid, String phone, String name, String email, String id, String pwd) {
+    public Member(String usersUid, String phone, String name, String email, String id, String pwd, String surveyCheck) {
         super();
         this.usersUid = usersUid;
         this.phone = phone;
@@ -19,6 +20,7 @@ public class Member {
         this.email = email;
         this.id = id;
         this.pwd = pwd;
+        this.surveyCheck = surveyCheck;
     }
 
     public String getUsersUid() {
@@ -68,6 +70,13 @@ public class Member {
     public void setPwd(String pwd) {
         this.pwd = pwd;
     }
+    public String getSurveyCheck() {
+        return this.surveyCheck;
+    }
+
+    public void setSurveyCheck(String surveyCheck) {
+        this.surveyCheck = surveyCheck;
+    }
 
     @Override
     public String toString() { // console창 띄울 때 모든 필드에 있는 값을 주소값 아닌 String으로 반환
@@ -78,6 +87,7 @@ public class Member {
                 ", email='" + getEmail() + "'" +
                 ", id='" + getId() + "'" +
                 ", pwd='" + getPwd() + "'" +
+                ", surveyCheck='" + getSurveyCheck() + "'" +
                 "}";
     }
 }

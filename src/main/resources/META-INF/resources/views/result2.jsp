@@ -49,12 +49,17 @@ HashMap<String, String> survey = (HashMap<String, String>)request.getAttribute("
                
               %>
               <%-- userNameArr에  --%>
+              <%-- userName...->순차출력 구조 바꿔야함. --%>
             <tr>
               <td><%=userName%></td>
               <%for(int k=0; k<5 ;k++){
                 String surveyStr = (String)survey.get("U"+(i+1)+"Q"+(k+1));
+                if(surveyStr != null){
                 %>
                 <td><%=surveyStr.charAt(surveyStr.length()-1)%></td>
+                <%}else{%>
+                <td>-</td>
+                <%}%>
               <%}%>
             </tr>
             <%}%>

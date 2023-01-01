@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import com.retoree.term_project.Bean.Member;
+import com.retoree.term_project.bean.Member;
 import com.retoree.term_project.dao.StatisticsWithDB;
 
 import jakarta.servlet.RequestDispatcher;

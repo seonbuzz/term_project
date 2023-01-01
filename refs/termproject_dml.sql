@@ -55,7 +55,7 @@ INSERT INTO USERS_LIST (USERS_UID, PHONE, NAME, EMAIL, ID, PWD, SURVEYCHECK)
 VALUES ('U4', '010-4567-4567', "아델", "adele@gmail.com", "adele", "adele", "NO");
 
 INSERT INTO USERS_LIST (USERS_UID, PHONE, NAME, EMAIL, ID, PWD, SURVEYCHECK)
-VALUES ('U5', '010-5678-5678', "시아", "sia@gmail.com", "sia", "sia"), "NO";
+VALUES ('U5', '010-5678-5678', "시아", "sia@gmail.com", "sia", "sia", "NO");
 
 INSERT ANSWERS (QUESTIONS_UID, EXAMPLE_UID)
 VALUES ('Q1', 'E1-1'),('Q1', 'E1-2'),('Q1', 'E1-3'),

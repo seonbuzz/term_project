@@ -28,11 +28,12 @@ public class AdminUserListServlet extends HttpServlet{
         ArrayList<HashMap> userList = db.getUserList();
         request.setAttribute("userList", userList);
 
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/admin_userlist.jap");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/admin_userlist.jsp");
         requestDispatcher.forward(request, response);
     
         for(int i = 0; i < userList.size(); i++) {
             System.out.println(userList.get(i).get("USERS_UID"));
+            System.out.println(userList.get(i).get("ID"));
         }
 
 

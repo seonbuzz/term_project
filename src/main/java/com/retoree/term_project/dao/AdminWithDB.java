@@ -19,6 +19,7 @@ public class AdminWithDB {
             ResultSet resultSet = statement.executeQuery(query);
             
             while(resultSet.next()) {
+                userInfo = new HashMap<>();
                 userInfo.put("USERS_UID", resultSet.getString("USERS_UID"));
                 userInfo.put("ID", resultSet.getString("ID"));
                 userInfo.put("PWD", resultSet.getString("PWD"));

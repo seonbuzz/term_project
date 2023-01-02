@@ -2,6 +2,7 @@
 <%@ page import="com.retoree.term_project.bean.Member" %>
 <% 
 Member loginUser = (Member)session.getAttribute("loginUser");
+String auth = (String)session.getAttribute("auth");
 %>
 
 <!DOCTYPE html>
@@ -31,6 +32,12 @@ Member loginUser = (Member)session.getAttribute("loginUser");
             
               <div class="text-center p-3"><%= loginUser.getName() %>님의 방문을 환영합니다.</div>
               <div class="text-center pb-3">원하시는 메뉴를 선택해주세요.</div>
+              <% if(auth.equals("YES")) { %>
+                <div class="text-center my-3">
+                 <button class="btn btn-light">
+                <a class="text-dark text-decoration-none" href="/adminUserListServlet">회원 조회</a> </button>
+                </div>
+                <% } %>
         <div class="text-center">
          <button class="btn btn-warning">
         <a class="text-dark text-decoration-none" href="/logout">로그아웃</a> </button>

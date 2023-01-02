@@ -189,6 +189,8 @@ if (loginUser == null){
         }
 
 ```
+세션을 체크해서 로그인 여부, 권한 체크
+서블릿의 session과 dispatcher의 두가지 기능으로 기능을 구현
 
 - 다솜
 ```

@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import com.retoree.term_project.Bean.Member;
 
@@ -47,5 +48,30 @@ public class LoginWithDB {
         // connection.close();
 
         return m;
+    }
+
+    public boolean admin(String id) throws SQLException {
+        {
+
+            // Member m = null;
+            Commons commons = new Commons();
+            Statement statement = commons.getStatement();
+            String query = "SELECT ID, PWD, AUTH FROM USERS_LIST WHERE ID= '" + id + "'  ";
+            ResultSet resultSet = null;
+
+            String auth = "";
+            try {
+                resultSet = statement.executeQuery(query);
+                while (resultSet.next()) {
+                    auth = resultSet.getString("AUTH");
+                }
+                if (auth.equals("AUTH")) {
+                    return true;
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return false;
     }
 }

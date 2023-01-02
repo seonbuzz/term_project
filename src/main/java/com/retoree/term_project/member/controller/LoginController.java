@@ -22,15 +22,18 @@ public class LoginController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        HttpSession session = request.getSession();
 
         try {
             String id = request.getParameter("id");
             String pwd = request.getParameter("pwd");
+            String path = "";
 
             // System.out.println(id);
             // System.out.println(pwd);
 
             // 요청처리
+            LoginWithDB loginWithDB = new LoginWithDB();
             Member loginUser = new LoginWithDB().loginMember(id, pwd);
             // System.out.println(loginUser);
 
@@ -47,7 +50,6 @@ public class LoginController extends HttpServlet {
 
                 // loginUser를 session 처리
 
-                HttpSession session = request.getSession();
                 session.setAttribute("loginUser", loginUser);
 
                 RequestDispatcher view = request.getRequestDispatcher("views/welcome.jsp");
@@ -55,6 +57,16 @@ public class LoginController extends HttpServlet {
                 // response.sendRedirect(request.getContextPath()); 일단 쓰지 않기
 
             }
+
+            if (loginWithDB.admin(id)) {
+                path = "vies/welcome.jsp";
+            } else {
+                path = "views/errorPage.jsp";
+            }
+
+            session.setAttribute("path", path);
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher(path);
+            requestDispatcher.forward(request, response);
 
         } catch (
 

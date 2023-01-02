@@ -151,6 +151,21 @@ onsubmit을 이용해 회원가입 폼 제출 시 아이디 중복체크 여부 
 
 - 선아
 ```
+조회결과가 없음 -> errorPage 이동 / 조회결과 있음 -> 메인 페이지 응답
+         if (loginUser == null) {
+          RequestDispatcher view = request.getRequestDispatcher("views/errorPage.jsp");
+          view.forward(request, response);
+
+           } else {
+            
+            // loginUser를 session 처리
+
+           session.setAttribute("loginUser", loginUser);
+           session.setAttribute("auth", loginUser.getAuth());
+
+           RequestDispatcher view = request.getRequestDispatcher("views/welcome.jsp");
+           view.forward(request, response);
+          }
 ```
 
 - 병주
@@ -165,6 +180,8 @@ onsubmit을 이용해 회원가입 폼 제출 시 아이디 중복체크 여부 
 - 해인
 
 - 선아
+> 모든 홈페이지의 필수 기능인 로그인을 구현하게 되었습니다. 하나의 데이터를 관리하고 처리할 수 있는 beans를 활용하여 좀 더 쉽게 구현할 수 있었습니다.
+화면단에서 if문을 써서 로그인 전에는 로그인 화면을, 로그인 후에는 로그인 유저 정보가 뜨는 화면을 구현하고 싶었으나 if문 처리를 하면 로그인 화면이 두 번 나타나게 되어 곤혹을 겪었습니다. 이에 팀원들과 공유한 뒤 로그인 후 화면페이지를 따로 작성하는 것으로 수정하였습니다. 이러한 점들로 프로젝트를 할 때 팀원들과의 커뮤니케이션과 문제점 공유가 중요하다는 것을 깨달았습니다. 
 
 - 병주
 

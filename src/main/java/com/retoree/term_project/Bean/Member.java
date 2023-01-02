@@ -10,9 +10,11 @@ public class Member {
     private String id;
     private String pwd;
     private String surveyCheck;
+    private String auth;
 
     // 기본 생성자, 매개변수 생성자, setter/getter, toString
-    public Member(String usersUid, String phone, String name, String email, String id, String pwd, String surveyCheck) {
+    public Member(String usersUid, String phone, String name, String email, String id, String pwd, String surveyCheck,
+            String auth) {
         super();
         this.usersUid = usersUid;
         this.phone = phone;
@@ -70,12 +72,21 @@ public class Member {
     public void setPwd(String pwd) {
         this.pwd = pwd;
     }
+
     public String getSurveyCheck() {
         return this.surveyCheck;
     }
 
     public void setSurveyCheck(String surveyCheck) {
         this.surveyCheck = surveyCheck;
+    }
+
+    public String getAuth() {
+        return this.auth;
+    }
+
+    public void setAuth(String auth) {
+        this.auth = auth;
     }
 
     @Override
@@ -88,6 +99,7 @@ public class Member {
                 ", id='" + getId() + "'" +
                 ", pwd='" + getPwd() + "'" +
                 ", surveyCheck='" + getSurveyCheck() + "'" +
+                ", auth='" + getAuth() + "'" +
                 "}";
     }
 }

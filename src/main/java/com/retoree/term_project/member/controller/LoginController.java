@@ -58,16 +58,6 @@ public class LoginController extends HttpServlet {
 
             }
 
-            if (loginWithDB.admin(id)) {
-                path = "vies/welcome.jsp";
-            } else {
-                path = "views/errorPage.jsp";
-            }
-
-            session.setAttribute("path", path);
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher(path);
-            requestDispatcher.forward(request, response);
-
         } catch (
 
         SQLException e) {

@@ -78,6 +78,7 @@ Member loginUser = (Member)session.getAttribute("loginUser");
     <div class="container border border-dark rounded bg-white my-4">
       <main class="p-5">
         <div class="text-center p-3"><%= loginUser.getName() %>님의 방문을 환영합니다.</div>
+         <div class="text-center pb-3">원하시는 메뉴를 선택해주세요.</div>
         <div class="text-center">
          <button class="btn btn-warning">
         <a class="text-dark text-decoration-none" href="/logout">로그아웃</a> </button>

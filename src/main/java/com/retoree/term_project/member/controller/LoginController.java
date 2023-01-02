@@ -32,11 +32,11 @@ public class LoginController extends HttpServlet {
 
             // 요청처리
             Member loginUser = new LoginWithDB().loginMember(id, pwd);
-            System.out.println(loginUser);
+            // System.out.println(loginUser);
 
             if (loginUser == null) {
                 // 조회결과없음 == => 에러페이지 나오게 하기
-                request.setAttribute("errorMsg", "아이디 또는 비밀번호가 맞지 않습니다.");
+                // request.setAttribute("errorMsg", "아이디 또는 비밀번호가 맞지 않습니다.");
                 // RequestDispatcher view = request.getRequestDispatcher("views/login.jsp");
 
                 RequestDispatcher view = request.getRequestDispatcher("views/errorPage.jsp");

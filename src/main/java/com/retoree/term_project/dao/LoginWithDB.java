@@ -38,7 +38,8 @@ public class LoginWithDB {
                         resultSet.getString("email"),
                         resultSet.getString("id"),
                         resultSet.getString("pwd"),
-                        resultSet.getString("SURVEYCHECK"));
+                        resultSet.getString("SURVEYCHECK"),
+                        resultSet.getString("AUTH"));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -50,28 +51,4 @@ public class LoginWithDB {
         return m;
     }
 
-    public boolean admin(String id) throws SQLException {
-        {
-
-            // Member m = null;
-            Commons commons = new Commons();
-            Statement statement = commons.getStatement();
-            String query = "SELECT ID, PWD, AUTH FROM USERS_LIST WHERE ID= '" + id + "'  ";
-            ResultSet resultSet = null;
-
-            String auth = "";
-            try {
-                resultSet = statement.executeQuery(query);
-                while (resultSet.next()) {
-                    auth = resultSet.getString("AUTH");
-                }
-                if (auth.equals("AUTH")) {
-                    return true;
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-        return false;
-    }
 }

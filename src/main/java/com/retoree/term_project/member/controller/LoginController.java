@@ -27,7 +27,7 @@ public class LoginController extends HttpServlet {
         try {
             String id = request.getParameter("id");
             String pwd = request.getParameter("pwd");
-            String path = "";
+            // String path = "";
 
             // System.out.println(id);
             // System.out.println(pwd);
@@ -51,6 +51,7 @@ public class LoginController extends HttpServlet {
                 // loginUser를 session 처리
 
                 session.setAttribute("loginUser", loginUser);
+                session.setAttribute("auth", loginUser.getAuth());
 
                 RequestDispatcher view = request.getRequestDispatcher("views/welcome.jsp");
                 view.forward(request, response);

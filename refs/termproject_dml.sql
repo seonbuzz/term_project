@@ -43,19 +43,19 @@ INSERT INTO EXAMPLE_LIST (EXAMPLE_UID, EXAMPLE, ORDERS)
 VALUES ('E5', "매우 그렇다", 5);
 
 INSERT INTO USERS_LIST (USERS_UID, PHONE, NAME, EMAIL, ID, PWD, SURVEYCHECK)
-VALUES ('U1', '010-1234-1234', "아리아나 그란데", "ariana@gmail.com", "ariana", "ariana", "NO");
+VALUES ('U1', '010-1234-1234', "아리아나 그란데", "ariana@gmail.com", "ariana", "ariana", "YES");
 
 INSERT INTO USERS_LIST (USERS_UID, PHONE, NAME, EMAIL, ID, PWD, SURVEYCHECK)
-VALUES ('U2', '010-2345-2345', "머라이어 캐리", "mariah@gmail.com", "mariah", "mariah", "NO");
+VALUES ('U2', '010-2345-2345', "머라이어 캐리", "mariah@gmail.com", "mariah", "mariah", "YES");
 
 INSERT INTO USERS_LIST (USERS_UID, PHONE, NAME, EMAIL, ID, PWD, SURVEYCHECK)
-VALUES ('U3', '010-3456-3456', "테일러 스위프트", "taylor@gmail.com", "taylor", "taylor", "NO");
+VALUES ('U3', '010-3456-3456', "테일러 스위프트", "taylor@gmail.com", "taylor", "taylor", "YES");
 
 INSERT INTO USERS_LIST (USERS_UID, PHONE, NAME, EMAIL, ID, PWD, SURVEYCHECK)
-VALUES ('U4', '010-4567-4567', "아델", "adele@gmail.com", "adele", "adele", "NO");
+VALUES ('U4', '010-4567-4567', "아델", "adele@gmail.com", "adele", "adele", "YES");
 
 INSERT INTO USERS_LIST (USERS_UID, PHONE, NAME, EMAIL, ID, PWD, SURVEYCHECK)
-VALUES ('U5', '010-5678-5678', "시아", "sia@gmail.com", "sia", "sia", "NO");
+VALUES ('U5', '010-5678-5678', "시아", "sia@gmail.com", "sia", "sia", "YES");
 
 INSERT ANSWERS (QUESTIONS_UID, EXAMPLE_UID)
 VALUES ('Q1', 'E1-1'),('Q1', 'E1-2'),('Q1', 'E1-3'),

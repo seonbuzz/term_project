@@ -33,7 +33,6 @@ public class LoginController extends HttpServlet {
             // System.out.println(pwd);
 
             // 요청처리
-            LoginWithDB loginWithDB = new LoginWithDB();
             Member loginUser = new LoginWithDB().loginMember(id, pwd);
             System.out.println(loginUser);
 

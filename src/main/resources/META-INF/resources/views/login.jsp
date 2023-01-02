@@ -66,10 +66,24 @@ String auth = (String)session.getAttribute("auth");
 </form>
 
         <div class="pt-4">
-          회원이 아니신가요?
+          <%-- 회원이 아니신가요? --%>
           <button class="btn btn-sm btn-secondary">
             <a class="text-light text-decoration-none" href="/signUpServlet">
               회원가입</a
+            >
+          </button>
+        <%-- </div> --%>
+
+         <%-- <div class="pt-4"> --%>
+       
+          <button class="btn btn-sm btn-secondary">
+            <a class="text-light text-decoration-none" href="/findIdServlet">
+              아이디 찾기</a
+            >
+          </button>
+              <button class="btn btn-sm btn-secondary">
+            <a class="text-light text-decoration-none" href="/findPwdServlet">
+              비밀번호 찾기</a
             >
           </button>
         </div>

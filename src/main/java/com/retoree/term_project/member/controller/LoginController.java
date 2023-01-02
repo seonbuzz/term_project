@@ -3,7 +3,7 @@ package com.retoree.term_project.member.controller;
 import java.io.IOException;
 import java.sql.SQLException;
 
-import com.retoree.term_project.bean.Member;
+import com.retoree.term_project.Bean.Member;
 import com.retoree.term_project.dao.LoginWithDB;
 
 import jakarta.servlet.RequestDispatcher;

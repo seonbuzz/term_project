@@ -2,7 +2,7 @@ package com.retoree.term_project.servlets;
 
 import java.io.IOException;
 
-import com.retoree.term_project.bean.Member;
+import com.retoree.term_project.Bean.Member;
 import com.retoree.term_project.dao.LoginWithDB;
 import com.retoree.term_project.dao.SurveyWithDB;
 

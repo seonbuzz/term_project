@@ -1,4 +1,4 @@
-package com.retoree.term_project.bean;
+package com.retoree.term_project.Bean;
 
 // 하나의 데이터를 관리하고 처리할 수 있는 기법을 jsp에서 구현하는 것 -> Java Beans
 public class Member {

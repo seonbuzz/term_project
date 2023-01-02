@@ -5,7 +5,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import com.retoree.term_project.bean.Member;
+import com.retoree.term_project.Bean.Member;
 import com.retoree.term_project.dao.SurveyWithDB;
 
 import jakarta.servlet.RequestDispatcher;

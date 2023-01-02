@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.retoree.term_project.bean.Member;
+import com.retoree.term_project.Bean.Member;
 
 public class LoginWithDB {
 

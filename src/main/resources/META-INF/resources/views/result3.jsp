@@ -100,7 +100,7 @@ HashMap<String, String> statistics = (HashMap<String, String>)request.getAttribu
         </table>
         <br /><br /><br />
         <div class="d-flex justify-content-center p-3">
-          <a href="./index.html" class="btn btn-lg btn-warning border-dark"
+          <a href="/index" class="btn btn-lg btn-warning border-dark"
             >메인</a
           >
         </div>

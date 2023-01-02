@@ -115,6 +115,54 @@
 
 ## 주요 코드
 - 해인
+```
+<!-- 중복 체크 여부 -->
+<input type="hidden" name="idCheck" value = "idUnCheck">
+```
+아이디 중복 체크 여부를 체크하기 위해 hidden값 부여
+```
+if(request.getAttribute("idCheck") == 1) {
+document.signupForm.idCheck.value = "idCheck"
+```
+아이디 중복 체크 결과 사용 가능한 아이디일 경우 idCheck로 값 변경
+```
+<form action="/SignUpSubmitServlet" method="post" name="signupForm" onsubmit="return submitForm()">
+
+      (생략)
+      
+function submitForm() {
+        if(document.signupForm.user_id.value.length < 6  || document.signupForm.user_id.value.length > 16){
+          alert("아이디는 6자~16자까지 사용 가능합니다.");
+          return false;
+        } else if (document.signupForm.idCheck.value == "idUnCheck") {
+          alert("아이디 중복체크 필수입니다.");
+        } else if(document.signupForm.user_pw.value != document.signupForm.user_pw_confirm.value) {
+          alert("비밀번호가 일치하지 않습니다.");
+          return false;
+        } else if(document.signupForm.user_pw.value.length < 6  || document.signupForm.user_pw.value.length > 16) {
+          alert("비밀번호는 6자~16자까지 사용 가능합니다.");
+          return false;
+        } else {
+          return true;
+        }
+      }                
+```
+onsubmit을 이용해 회원가입 폼 제출 시 아이디 중복체크 여부 및 기타 값 설정 확인
+
+- 선아
+```
+```
+
+- 병주
+```
+```
+
+- 다솜
+```
+```
+
+## 프로젝트를 통해 느낀 점
+- 해인
 
 - 선아
 

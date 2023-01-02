@@ -58,7 +58,7 @@ public class SignupWithDB {
         // 회원 정보 DB에 입력
         Commons commons = new Commons();
         String query ="INSERT INTO USERS_LIST " + 
-        "VALUES(?, ?, ?, ?, ?, ?)";
+        "VALUES(?, ?, ?, ?, ?, ?, ?)";
 
         Connection connection = commons.connection();
         PreparedStatement pstmt;
@@ -70,7 +70,7 @@ public class SignupWithDB {
             pstmt.setString(4, eamil);
             pstmt.setString(5, id);
             pstmt.setString(6, pwd);
-            
+            pstmt.setString(7, "NO"); //설문 체크
             return pstmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

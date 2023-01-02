@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.retoree.term_project.Bean.Member;
+import com.retoree.term_project.bean.Member;
 
 public class LoginWithDB {
 
@@ -36,7 +36,8 @@ public class LoginWithDB {
                         resultSet.getString("name"),
                         resultSet.getString("email"),
                         resultSet.getString("id"),
-                        resultSet.getString("pwd"));
+                        resultSet.getString("pwd"),
+                        resultSet.getString("SURVEYCHECK"));
             }
         } catch (SQLException e) {
             e.printStackTrace();

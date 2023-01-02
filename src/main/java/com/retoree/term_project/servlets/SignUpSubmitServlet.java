@@ -5,7 +5,7 @@ import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import com.retoree.term_project.Bean.Member;
+import com.retoree.term_project.bean.Member;
 import com.retoree.term_project.dao.SignupWithDB;
 
 import jakarta.servlet.RequestDispatcher;

@@ -8,7 +8,7 @@ Member loginUser = (Member)session.getAttribute("loginUser");
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="./css/all.css" />
+<link rel="stylesheet" href="./bootstraps/css/all.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
       rel="stylesheet"

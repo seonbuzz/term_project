@@ -13,7 +13,7 @@
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="./css/all.css" />
+   <link rel="stylesheet" href="./bootstraps/css/all.css" />
     <title>SUN - 제출 완료</title>
   </head>
   <body>

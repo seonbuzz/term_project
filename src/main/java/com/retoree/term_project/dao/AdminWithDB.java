@@ -17,8 +17,8 @@ public class AdminWithDB {
 
         try {
             ResultSet resultSet = statement.executeQuery(query);
-            
-            while(resultSet.next()) {
+
+            while (resultSet.next()) {
                 userInfo = new HashMap<>();
                 userInfo.put("USERS_UID", resultSet.getString("USERS_UID"));
                 userInfo.put("ID", resultSet.getString("ID"));
@@ -30,7 +30,10 @@ public class AdminWithDB {
                 userInfo.put("AUTH", resultSet.getString("AUTH"));
 
                 userList.add(userInfo);
+
+                System.out.println(userInfo);
             }
+
         } catch (SQLException e) {
             e.printStackTrace();
         }

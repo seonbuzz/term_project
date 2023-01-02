@@ -35,7 +35,7 @@ public class LoginController extends HttpServlet {
             // 요청처리
             LoginWithDB loginWithDB = new LoginWithDB();
             Member loginUser = new LoginWithDB().loginMember(id, pwd);
-            // System.out.println(loginUser);
+            System.out.println(loginUser);
 
             if (loginUser == null) {
                 // 조회결과없음 == => 에러페이지 나오게 하기

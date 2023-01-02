@@ -23,6 +23,8 @@ public class Member {
         this.id = id;
         this.pwd = pwd;
         this.surveyCheck = surveyCheck;
+        this.auth = auth;
+
     }
 
     public String getUsersUid() {

@@ -1,7 +1,7 @@
 use retoree_TermProject ;
 
 INSERT INTO ADMIN (ADMIN_UID, ADMIN_ID, ADMIN_PWD)
-VALUES ('AD1', "admin", "admin");
+VALUES ('AD1', "admin01", "admin01");
 
 INSERT INTO QUESTIONS_LIST (QUESTIONS_UID, QUESTIONS, ORDERS)
 VALUES ('Q1', "현재 사용중인 제품을 선택해주세요. (답은 한가지만 선택 가능)", 1);
@@ -42,20 +42,24 @@ VALUES ('E4', "그렇다", 4);
 INSERT INTO EXAMPLE_LIST (EXAMPLE_UID, EXAMPLE, ORDERS)
 VALUES ('E5', "매우 그렇다", 5);
 
-INSERT INTO USERS_LIST (USERS_UID, PHONE, NAME, EMAIL, ID, PWD, SURVEYCHECK)
-VALUES ('U1', '010-1234-1234', "아리아나 그란데", "ariana@gmail.com", "ariana", "ariana", "YES");
+INSERT INTO USERS_LIST (USERS_UID, PHONE, NAME, EMAIL, ID, PWD, SURVEYCHECK, AUTH)
+VALUES ('U1', '010-1234-1234', "아리아나 그란데", "ariana@gmail.com", "ariana", "ariana", "YES", "NO");
 
-INSERT INTO USERS_LIST (USERS_UID, PHONE, NAME, EMAIL, ID, PWD, SURVEYCHECK)
-VALUES ('U2', '010-2345-2345', "머라이어 캐리", "mariah@gmail.com", "mariah", "mariah", "YES");
+INSERT INTO USERS_LIST (USERS_UID, PHONE, NAME, EMAIL, ID, PWD, SURVEYCHECK, AUTH)
+VALUES ('U2', '010-2345-2345', "머라이어 캐리", "mariah@gmail.com", "mariah", "mariah", "YES", "NO");
 
-INSERT INTO USERS_LIST (USERS_UID, PHONE, NAME, EMAIL, ID, PWD, SURVEYCHECK)
-VALUES ('U3', '010-3456-3456', "테일러 스위프트", "taylor@gmail.com", "taylor", "taylor", "YES");
+INSERT INTO USERS_LIST (USERS_UID, PHONE, NAME, EMAIL, ID, PWD, SURVEYCHECK, AUTH)
+VALUES ('U3', '010-3456-3456', "테일러 스위프트", "taylor@gmail.com", "taylor", "taylor", "YES", "NO");
 
-INSERT INTO USERS_LIST (USERS_UID, PHONE, NAME, EMAIL, ID, PWD, SURVEYCHECK)
-VALUES ('U4', '010-4567-4567', "아델", "adele@gmail.com", "adele", "adele", "YES");
+INSERT INTO USERS_LIST (USERS_UID, PHONE, NAME, EMAIL, ID, PWD, SURVEYCHECK, AUTH)
+VALUES ('U4', '010-4567-4567', "아델", "adele@gmail.com", "adele", "adele", "YES", "NO");
 
-INSERT INTO USERS_LIST (USERS_UID, PHONE, NAME, EMAIL, ID, PWD, SURVEYCHECK)
-VALUES ('U5', '010-5678-5678', "시아", "sia@gmail.com", "sia", "sia", "YES");
+INSERT INTO USERS_LIST (USERS_UID, PHONE, NAME, EMAIL, ID, PWD, SURVEYCHECK, AUTH)
+VALUES ('U5', '010-5678-5678', "시아", "sia@gmail.com", "sia", "sia", "YES", "NO");
+
+INSERT INTO USERS_LIST (USERS_UID, PHONE, NAME, EMAIL, ID, PWD, SURVEYCHECK, AUTH)
+VALUES ('U6', '010-2023-0102', "관리자", "admin@gmail.com", "admin01", "admin01", "NO", "YES");
+
 
 INSERT ANSWERS (QUESTIONS_UID, EXAMPLE_UID)
 VALUES ('Q1', 'E1-1'),('Q1', 'E1-2'),('Q1', 'E1-3'),

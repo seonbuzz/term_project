@@ -170,6 +170,24 @@ onsubmit을 이용해 회원가입 폼 제출 시 아이디 중복체크 여부 
 
 - 병주
 ```
+
+if (loginUser == null){
+            requestDispatcher = request.getRequestDispatcher("/views/errorPage3.jsp");
+            requestDispatcher.forward(request, response);
+        }else{
+            if(loginUser.getAuth().equals("YES")){
+                requestDispatcher = request.getRequestDispatcher("/views/result2.jsp");
+                request.setAttribute("loginData", httpSession.getAttribute("loginUser"));
+                request.setAttribute("userNameArr", userNameArr);
+                request.setAttribute("survey", survey);
+                requestDispatcher.forward(request, response);
+            }else{
+                requestDispatcher = request.getRequestDispatcher("/views/errorPage4.jsp");
+                requestDispatcher.forward(request, response);
+            }
+
+        }
+
 ```
 
 - 다솜

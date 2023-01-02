@@ -42,6 +42,8 @@
 1. JSP
 
     -[ login.jsp](https://github.com/seonbuzz/term_project/blob/master/src/main/resources/META-INF/resources/views/login.jsp)
+    
+    -[errorPage.jsp](https://github.com/seonbuzz/term_project/blob/master/src/main/resources/META-INF/resources/views/errorPage.jsp)
 
     -[ errorPage4.jsp](https://github.com/seonbuzz/term_project/blob/master/src/main/resources/META-INF/resources/views/errorPage4.jsp)
 
@@ -70,8 +72,6 @@
     -[result2.jsp](https://github.com/seonbuzz/term_project/blob/master/src/main/resources/META-INF/resources/views/result2.jsp)
 
     -[result3.jsp](https://github.com/seonbuzz/term_project/blob/master/src/main/resources/META-INF/resources/views/result3.jsp)
-
-    -[errorPage.jsp](https://github.com/seonbuzz/term_project/blob/master/src/main/resources/META-INF/resources/views/errorPage.jsp)
 
     -[errorPage2.jsp](https://github.com/seonbuzz/term_project/blob/master/src/main/resources/META-INF/resources/views/errorPage2.jsp)
 

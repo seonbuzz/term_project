@@ -6,7 +6,7 @@ rel="stylesheet"
 integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
 crossorigin="anonymous"
 />
-<link rel="stylesheet" href="./css/all.css" />
+<link rel="stylesheet" href="./bootstraps/css/all.css" />
 <% String id = request.getParameter("user_id");
 SignupWithDB db = new SignupWithDB(); 
 int result = db.checkId(id);

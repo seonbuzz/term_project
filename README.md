@@ -10,7 +10,7 @@
 
 ### 구현 영상
 
-- [이어폰 폼 구현 영상](링크 추가 필요)
+- [이어폰 폼 구현 영상](https://www.youtube.com/watch?v=hut0kScLikg&ab_channel=DEVELOP)
 
 ## Members
 
@@ -228,13 +228,14 @@ if (loginUser == null){
             System.out.println();
             requestDispatcher.forward(request, response);
         }
+       로그인 여부 체크 후 설문 진행 판단
 ```
-
-로그인 여부 체크 후 설문 진행 판단
 
 ## 프로젝트를 통해 느낀 점
 
 - 해인
+  > 먼저 프로젝트를 시작할 때 코로나에 걸려서 초반에 참여를 하지 못했는데, 이를 이해해주고 배려해준 팀원들에게 고마움을 많이 느꼈습니다.
+  > 애매모호하게 느껴졌던 서블렛의 기능이 프로젝트를 통해 더 와닿게 되었고, DB에 데이터가 들어가는게 보여서 진짜 뭔가를 하고 있다는 느낌이 들었습니다. 
 
 - 선아
 

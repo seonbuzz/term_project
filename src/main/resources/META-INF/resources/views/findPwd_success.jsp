@@ -41,7 +41,7 @@ String pwd = (String)session.getAttribute("pwd");
             
         <div class="text-center">
          <button class="btn btn-warning">
-        <a class="text-dark text-decoration-none" href="/login">로그인 하기</a> </button>
+        <a class="text-dark text-decoration-none" href="/loginServlet">로그인 하기</a> </button>
         </div>
 </form>
 

@@ -104,4 +104,5 @@ public class Member {
                 ", auth='" + getAuth() + "'" +
                 "}";
     }
+
 }

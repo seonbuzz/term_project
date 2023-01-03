@@ -40,25 +40,39 @@
 
    -[ AdminUserListServlet.java](https://github.com/seonbuzz/term_project/blob/master/src/main/java/com/retoree/term_project/servlets/admin/AdminUserListServlet.java)
 
-### 👩‍💻 윤선아 : 로그인/로그아웃, 에러페이지
+### 👩‍💻 윤선아 : 로그인/로그아웃, 아이디/비밀번호 찾기, 에러페이지
 
 1. JSP
 
    -[ login.jsp](https://github.com/seonbuzz/term_project/blob/master/src/main/resources/META-INF/resources/views/login.jsp)
 
-   -[errorPage.jsp](https://github.com/seonbuzz/term_project/blob/master/src/main/resources/META-INF/resources/views/errorPage.jsp)
+   -[ errorPage.jsp](https://github.com/seonbuzz/term_project/blob/master/src/main/resources/META-INF/resources/views/errorPage.jsp)
 
    -[ errorPage4.jsp](https://github.com/seonbuzz/term_project/blob/master/src/main/resources/META-INF/resources/views/errorPage4.jsp)
+   
+   -[ findId.jsp](https://github.com/seonbuzz/term_project/blob/master/src/main/resources/META-INF/resources/views/findId.jsp)
+   
+   -[ findId_success.jsp](https://github.com/seonbuzz/term_project/blob/master/src/main/resources/META-INF/resources/views/findId_success.jsp)
+   
+   -[ findPwd.jsp](https://github.com/seonbuzz/term_project/blob/master/src/main/resources/META-INF/resources/views/findPwd.jsp)
+   
+   -[ findPwd_success.jsp](https://github.com/seonbuzz/term_project/blob/master/src/main/resources/META-INF/resources/views/findPwd_success.jsp)
 
 2. DB
 
    -[ Member.java](https://github.com/seonbuzz/term_project/blob/master/src/main/java/com/retoree/term_project/Bean/Member.java)
 
    -[ LoginWithDB.java](https://github.com/seonbuzz/term_project/blob/master/src/main/java/com/retoree/term_project/dao/LoginWithDB.java)
+   
+    -[ FindWithDB.java](https://github.com/seonbuzz/term_project/blob/master/src/main/java/com/retoree/term_project/dao/FindWithDB.java)
 
 3. Servlet
 
    -[ LoginServlet.java](https://github.com/seonbuzz/term_project/blob/master/src/main/java/com/retoree/term_project/servlets/LoginServlet.java)
+   
+   -[ FindIdServlet.java](https://github.com/seonbuzz/term_project/blob/master/src/main/java/com/retoree/term_project/servlets/FindIdServlet.java)
+   
+   -[ FindPwdServlet.java](https://github.com/seonbuzz/term_project/blob/master/src/main/java/com/retoree/term_project/servlets/FindPwdServlet.java)
 
 4. Controller
 
